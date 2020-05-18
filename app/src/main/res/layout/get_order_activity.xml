@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--Frame Layout 1-->
+    <!--Sử dụng Frame layout để điều chỉnh vị trí bằng layout_gravity-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF3C00"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/orderStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="Tình trạng" />
+
+        <TextView
+            android:id="@+id/orderTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="Thời gian" />
+    </FrameLayout>
+    <!--Frame Layout 2-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/payType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:textSize="20dp"
+            android:textColor="#f000"
+            android:text="Trả bởi khách hàng:" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:textSize="20dp"
+            android:textColor="#f000"
+            android:text="Giá tiền" />
+        <!--Đường kẻ-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f000"
+            android:layout_marginTop="30dp"/>
+        <TextView
+            android:id="@+id/totalLable"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:textSize="20dp"
+            android:textColor="#f000"
+            android:layout_marginTop="10dp"
+            android:text="Tổng cộng"/>
+        <TextView
+            android:id="@+id/totalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:textColor="#f000"
+            android:text="VNĐ"/>
+        <TextView
+            android:id="@+id/moreInfoLable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:textColor="#FF5722"
+            android:text="Xem chi tiết"/>
+    </FrameLayout>
+    <!--Frame Layout 3-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20px"
+        android:padding="20px">
+        <TextView
+            android:id="@+id/typeOrdersLable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:textSize="25dp"
+            android:textColor="#f000"
+            android:text="Đơn hàng giao ngay" />
+        <!--Đường kẻ-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f000"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/pickUpAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:layout_marginTop="20px"
+            android:textSize="20dp"
+            android:textColor="#f000"
+            android:text="Điểm nhận: 371 Nguyễn Kiệm F3 Quận Gò Vấp TpHCM"/>
+        <TextView
+            android:id="@+id/shipAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:layout_marginTop="40px"
+            android:textSize="20dp"
+            android:textColor="#f000"
+            android:text="Điểm giao: Thích giao đâu thì giao :))"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20px"
+        android:padding="20px">
+        <TextView
+            android:id="@+id/moneyPaidLable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#f000"
+            android:text="Số tiền thu hộ: ">
+        </TextView>
+        <TextView
+            android:id="@+id/moneyPaid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:textColor="#F44336"
+            android:text="Tiền thu hộ">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20px"
+        android:padding="20px">
+        <TextView
+            android:id="@+id/noteLable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#f000"
+            android:text="Ghi chú đơn hàng: ">
+        </TextView>
+        <!--Đường kẻ-->
+        <View
+            android:id="@+id/note"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f000"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textColor="#f000"
+            android:text="Ghi chú">
+        </TextView>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Nhận hàng"
+        android:background="#00FF04"/>
+</LinearLayout>
