@@ -1,3 +1,41 @@
 <resources>
-    <string name="app_name">Shippers</string>
+    //Đồ ăn
+    <string name="search_hint_food">Nhập tên món ăn của nhà hàng này</string>
+    <string name="food_display">Danh sách các món ăn</string>
+    <string name="food_picture_description"> Món ăn </string>
+    <string name="food_description">Miêu tả món ăn</string>
+    <string name="food_name">Tên món ăn</string>
+    <string name="confirm_order">Xác nhận đơn hàng</string>
+    <string name="food_count">Số lượng:</string>
+    <string name="food_count_confirm">Xác nhận số lượng</string>
+    //Nhà hàng
+    <string name="list_rest">Danh sách các nhà hàng</string>
+    <string name="search_hint">Nhập tên nhà hàng hoặc món ăn</string>
+    <string name="rest_picture_description">Nhà hàng</string>
+    <string name="rest_address">Địa chỉ nhà hàng</string>
+    <string name="rest_name">Tên nhà hàng</string>
+    <string name="opening_time">Giờ mở cửa:</string>
+    <string name="coupon">Mã giảm giá:</string>
+    //Menu
+    <string name="check_order">Kiểm tra đơn hàng</string>
+    <string name="change_language">Đổi ngôn ngữ</string>
+    <string name="change_address">Đổi địa chỉ giao hàng</string>
+    //Khác
+    <string name="app_name" translatable="false">What</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="more">Các tùy chọn khác</string>
+    <string name="languages">Ngôn ngữ</string>
+    <string name="accounts">Đổi tài khoản...</string>
+    <string name="categoryDes">Hình danh mục</string>
+    <string name="yourOrder">Đơn của bạn</string>
+    <string name="confirm">XÁC NHẬN</string>
+    <string name="total">Tổng tiền:</string>
+    <string name="lang_english">Tiếng Anh</string>
+    <string name="lang_viet">Tiếng Việt</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="red" translatable="false" />
+    <string name="blue" translatable="false" />
+    <string name="orange" translatable="false" />
+
+
 </resources>

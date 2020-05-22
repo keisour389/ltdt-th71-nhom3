@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="food_display">Menu</string>
+    <string name="search">Search</string>
+    <string name="more">Settings</string>
+    <string name="languages">Languages</string>
+    <string name="accounts">Change accounts...</string>
+    <string name="rest_picture_description">Restaurant</string>
+    <string name="food_name">Food name</string>
+    <string name="food_picture_description">Food</string>
+    <string name="food_description">Food description</string>
+    <string name="rest_name">Restaurant name</string>
+    <string name="rest_address">Restaurant address</string>
+    <string name="search_hint">restaurant / food name</string>
+    <string name="search_hint_food">food from this restaurant</string>
+    <string name="categoryDes">Image of category</string>
+    <string name="confirm_order">Confirm order</string>
+    <string name="list_rest">List of restaurants</string>
+    <string name="opening_time">Opening hours:</string>
+    <string name="coupon">Coupon:</string>
+    <string name="food_count">Counts:</string>
+    <string name="food_count_confirm">Confirm count</string>
+    <string name="yourOrder">Your order</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="total">Total:</string>
+    <string name="check_order">Checkout</string>
+    <string name="change_language">Change language</string>
+    <string name="change_address">Change your address</string>
+    <string name="lang_english">English</string>
+    <string name="lang_viet">Vietnamese</string>
+</resources>

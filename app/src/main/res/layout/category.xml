@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/categories"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:padding="4dp"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/categoryPic"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:contentDescription="@string/categoryDes">
+        </ImageView>
+        <TextView
+            android:id="@+id/categoryName"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:textSize="13sp"
+            android:layout_gravity="center">
+        </TextView>
+    </LinearLayout>

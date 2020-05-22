@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_check_order"
+        android:title="@string/check_order"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_change_language"
+        android:title="@string/change_language"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_change_address"
+        android:title="@string/change_address"
+        app:showAsAction="never"/>
+</menu>
