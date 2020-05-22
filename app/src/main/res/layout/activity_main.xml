@@ -1,29 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
-    <!--View pager chứa giá các đơn hàng-->
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/ordersViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_weight="1">
-    </androidx.viewpager.widget.ViewPager>
-    <!--Tab layout chứa các chức năng-->
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabOrders"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        app:tabIndicatorColor="#a845de"
-        app:tabIndicatorHeight="2dp"
-        app:tabMode="fixed"
-        app:tabSelectedTextColor="#a845de"
-        app:tabTextColor="#000000"></com.google.android.material.tabs.TabLayout>
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btnNguoiBan"
+        android:layout_width="248dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="64dp"
+        android:background="#fc92cb"
+        android:text="Người bán hàng"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnDangKy"
+        android:layout_width="248dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="380dp"
+        android:background="#fc92cb"
+        android:text="Đăng Ký "
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnDangNhapSdt"
+        android:layout_width="248dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="448dp"
+        android:background="#fc92cb"
+        android:text="Đăng nhập"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

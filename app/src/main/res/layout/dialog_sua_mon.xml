@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E23F51B5">
+
+    <TextView
+        android:id="@+id/TextSma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Sửa món ăn"
+        android:textColor="#fc92cb"
+        android:textSize="36sp"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/editTextSuaTenMon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TextSma"
+        android:layout_marginTop="5dp"
+        android:hint="Nhập tên món ăn cần sửa"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/ButtonSua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextSuaTenMon"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#fc92cb"
+        android:text="Sửa"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/ButtonHuySua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextSuaTenMon"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/ButtonSua"
+        android:background="#fc92cb"
+        android:text="Hủy"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

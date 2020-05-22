@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E23F51B5">
+
+    <TextView
+        android:id="@+id/TextTma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Thêm món ăn"
+        android:textColor="#fc92cb"
+        android:textSize="36sp"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/editTextThemTenMon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TextTma"
+        android:layout_marginTop="5dp"
+        android:hint="Nhập tên món ăn"
+        android:textSize="18sp" />
+    <EditText
+        android:id="@+id/editTextMoTa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextThemTenMon"
+        android:hint="Mô tả món ăn"
+        android:layout_marginTop="5dp"
+        android:textSize="18dp"/>
+
+
+    <Button
+        android:id="@+id/ButtonThem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextMoTa"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#fc92cb"
+        android:text="Thêm"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/ButtonHuyThem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextMoTa"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/ButtonThem"
+        android:background="#fc92cb"
+        android:text="Hủy"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+
+
+</RelativeLayout>

@@ -1,2 +1,2 @@
-rootProject.name='Shippers'
+rootProject.name='AppOrder'
 include ':app'

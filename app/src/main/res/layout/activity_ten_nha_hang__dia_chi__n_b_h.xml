@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TenNhaHang_DiaChi_NBH">
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="398dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="48dp"
+        android:text="Người bán hàng cần nhập đầy đủ thông tin để được xác thực!"
+        android:textColor="#fc92cb"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnTiepTheoBanHang"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="324dp"
+        android:background="#fc92cb"
+        android:text="Tiếp Theo"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="2dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtLTenNhaHang"
+        android:layout_width="400dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="144dp"
+        android:hint="Tên nhà hàng"
+        app:counterEnabled="true"
+        app:errorEnabled="true"
+        app:hintEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtETenNhaHang"
+            android:layout_width="388dp"
+            android:layout_height="wrap_content"
+            android:enabled="true"
+            android:textColor="#03DAC5" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtLDiaChiNhaHang"
+        android:layout_width="400dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="228dp"
+        android:hint="Địa chỉ nhà hàng"
+        app:counterEnabled="true"
+        app:errorEnabled="true"
+        app:hintEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtEDiaChiNhaHang"
+            android:layout_width="388dp"
+            android:layout_height="wrap_content"
+            android:enabled="true"
+            android:textColor="#03DAC5"
+            tools:layout_editor_absoluteX="11dp"
+            tools:layout_editor_absoluteY="239dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

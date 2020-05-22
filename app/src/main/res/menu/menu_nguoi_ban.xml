@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Tạo nhà hàng"
+        android:id="@+id/menuTaoNhaHang" />
+
+    <item android:title="Quản lý nhà hàng"
+        android:id="@+id/menuQuanLyNhaHang"/>
+
+    <item android:title="Cài đặt"
+        android:id="@+id/menuCaiDat">
+        <menu>
+            <item android:title="Thông tin đăng nhập"
+                android:id="@+id/menuThongTinDangNhap"/>
+            <item android:title="Thay đổi ngôn ngữ"
+                android:id="@+id/menuThayDoiNgonNgu"/>
+            <item android:title="Đăng xuất"
+                android:id="@+id/menuDangXuat"/>
+
+        </menu>
+    </item>
+</menu>

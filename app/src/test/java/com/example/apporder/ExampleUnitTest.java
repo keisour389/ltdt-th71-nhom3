@@ -1,4 +1,4 @@
-package com.example.shippers;
+package com.example.apporder;
 
 import org.junit.Test;
 

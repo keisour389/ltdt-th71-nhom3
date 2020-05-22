@@ -6,6 +6,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        //Màu ở trạng thái bình thường
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        //Màu ở trạng thái hoạt động
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorPrimaryDark</item>
     </style>
 
 </resources>
