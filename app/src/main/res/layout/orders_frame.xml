@@ -8,45 +8,49 @@
     <!--Các đơn hàng-->
     <!--android:descendantFocusability="blocksDescendants" cho phép để click vào child item -->
     <LinearLayout
+        android:layout_margin="5dp"
         android:descendantFocusability="blocksDescendants"
         android:id="@+id/ordersLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="10dp">
 
         <TextView
-            android:id="@+id/titleOrdersLinearLayout"
+            android:id="@+id/titleOrders"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Title"
-            android:textSize="15dp"
-            android:textStyle="bold"></TextView>
+            android:textColor="#FFF"
+            android:text="Đơn hàng mới"
+            android:background="#fa9702"
+            android:textSize="25dp"/>
 
-        <FrameLayout
+        <LinearLayout
             android:id="@+id/ordersFrameLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent">
+            android:orientation="vertical">
             <TextView
                 android:layout_gravity="top"
                 android:id="@+id/ordersId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Đây là mã đơn hàng."
-                android:textSize="15dp">
+                android:textColor="#f000"
+                android:textSize="20dp">
 
             </TextView>
 
             <TextView
-                android:layout_gravity="top"
                 android:id="@+id/pickUpAddressId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="pickUpAddressId"
-                android:textSize="15dp"
-                android:layout_marginTop="20dp"></TextView>
+                android:textColor="#f000"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"></TextView>
 
             <TextView
                 android:layout_gravity="top"
@@ -54,35 +58,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="shipAddressId"
-                android:textSize="15dp"
-                android:layout_marginTop="40dp">
+                android:textColor="#f000"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp">
             </TextView>
-            <LinearLayout
+            <FrameLayout
                 android:id="@+id/ordersNoteLinearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="60dp">
+                android:layout_marginTop="10dp">
                 <TextView
-                    android:layout_gravity="top"
+                    android:layout_gravity="left"
                     android:id="@+id/ordersNoteId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Đây là ghi chú."
-                    android:textSize="15dp">
+                    android:textColor="#f000"
+                    android:textSize="20dp">
                 </TextView>
                 <TextView
-                    android:layout_gravity="top"
+                    android:layout_gravity="right"
                     android:id="@+id/ordersPriceId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="120dp"
+                    android:textColor="#f000"
                     android:text="Đây là giá tiền."
-                    android:textSize="15dp">
+                    android:textSize="20dp">
                 </TextView>
-            </LinearLayout>
+            </FrameLayout>
 
-        </FrameLayout>
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".login.Activity.FormCreateAccount">
+
+
+    <Button
+        android:id="@+id/btnDangKy"
+        android:layout_width="401dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="528dp"
+        android:background="@color/colorOrange"
+        android:text="Đăng ký"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtLHo"
+        android:layout_width="400dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="80dp"
+        android:hint="Họ người đăng ký"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:errorEnabled="true"
+        app:hintEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtEHo"
+            android:layout_width="388dp"
+            android:layout_height="wrap_content"
+            android:enabled="true"
+            android:maxLength="20"
+            android:textColor="@color/colorOrange" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtLTen"
+        android:layout_width="400dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="148dp"
+        android:hint="Tên người đăng ký"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:errorEnabled="true"
+        app:hintEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtETen"
+            android:layout_width="388dp"
+            android:layout_height="wrap_content"
+            android:enabled="true"
+            android:maxLength="20"
+            android:textColor="@color/colorOrange"
+            tools:layout_editor_absoluteX="5dp"
+            tools:layout_editor_absoluteY="162dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtLDiaChi"
+        android:layout_width="400dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="384dp"
+        android:hint="Địa chỉ người đăng ký"
+        app:counterEnabled="true"
+        app:counterMaxLength="50"
+        app:errorEnabled="true"
+        app:hintEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtEDiaChi"
+            android:layout_width="388dp"
+            android:layout_height="wrap_content"
+            android:enabled="true"
+            android:maxLength="50"
+            android:textColor="@color/colorOrange"
+            tools:layout_editor_absoluteX="-5dp"
+            tools:layout_editor_absoluteY="398dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/edTEmail"
+        android:layout_width="393dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="456dp"
+        android:ems="10"
+        android:enabled="true"
+        android:hint="Email người đăng ký"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/colorOrange"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="389dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="48dp"
+        android:text="Mời người đăng ký nhập đầy đủ thông tin đăng ký!"
+        android:textColor="@color/colorOrange"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="392dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="4dp"
+        android:text="Thông tin đăng ký"
+        android:textColor="@color/colorOrange"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="182dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="236dp"
+        android:background="@color/colorOrange"
+        android:text="Chọn Ngày Sinh"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:layout_width="197dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="288dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-5dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Chọn giới tính:"
+            android:textColor="@color/colorOrange"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonNam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nam"
+            android:textColor="@color/colorOrange"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonNu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nữ"
+            android:textColor="@color/colorOrange"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Khung chính-->
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f100">
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:layout_margin="10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginTop="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--Đường kẻ-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="0dp"
+                android:background="#f000" />
+            <TextView
+                android:id="@+id/shipperInfoLable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_color"
+                android:textSize="40dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/colorOrange"
+                android:text="Thông tin cá nhân"/>
+            <!--Đường kẻ-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="0dp"
+                android:background="#f000" />
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/accountLable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30dp"
+                    android:textColor="#f000"
+                    android:text="Tài khoản: "/>
+                <TextView
+                    android:id="@+id/account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="30dp"
+                    android:textColor="#f000"
+                    android:text="012345689"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/nameLable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30dp"
+                    android:textColor="#f000"
+                    android:text="Họ tên: "/>
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="30dp"
+                    android:textColor="#f000"
+                    android:text="Nguyễn văn A"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:id="@+id/createdDateLable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30dp"
+                    android:textColor="#f000"
+                    android:text="Ngày hợp tác: "/>
+                <TextView
+                    android:id="@+id/createdDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="30dp"
+                    android:textColor="#f000"
+                    android:text="1-1-2020"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp">
+            <!--Đường kẻ-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="0dp"
+                android:background="#f000" />
+            <TextView
+                android:id="@+id/optionsLable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_color"
+                android:textSize="40dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/colorOrange"
+                android:text="Quản lí ứng dụng"/>
+            <!--Đường kẻ-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="0dp"
+            android:background="#f000" />
+            <Button
+                android:layout_marginTop="20dp"
+                android:id="@+id/changeLanguagesLable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorOrange"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                android:text="Chuyển đổi ngôn ngữ" />
+
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:background="@color/colorOrange"
+                android:textColor="@android:color/white"
+                android:text="Đăng xuất"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

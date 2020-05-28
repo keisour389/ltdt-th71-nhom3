@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".ShippersMainActivity">
+    <View
+        android:background="@color/colorOrange"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"></View>
     <!--View pager chứa giá các đơn hàng-->
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/ordersViewPager"
@@ -20,10 +24,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        app:tabIndicatorColor="#a845de"
+        app:tabIndicatorGravity="bottom"
+        app:tabIndicatorColor="@color/colorOrange"
         app:tabIndicatorHeight="2dp"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="#a845de"
+        app:tabSelectedTextColor="@color/colorOrange"
         app:tabTextColor="#000000"></com.google.android.material.tabs.TabLayout>
 
 </LinearLayout>

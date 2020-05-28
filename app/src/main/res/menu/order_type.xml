@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ordersPickedUp"
+        android:title="Đã nhận">
+
+    </item>
+    <item
+        android:id="@+id/ordersCancelled"
+        android:title="Đã hủy">
+
+    </item>
+    <item
+        android:id="@+id/ordersCompleted"
+        android:title="Đã hoàn thành">
+
+    </item>
+    <item
+        android:id="@+id/allOrders"
+        android:title="Tất cả đơn hàng">
+
+    </item>
+</menu>
