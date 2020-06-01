@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_background"
-    tools:context="com.example.shippers.login.Activity.MainLogin">
+    tools:context="com.example.shippers.Login.Activity.MainLogin">
     <LinearLayout
         android:layout_margin="10dp"
         android:layout_gravity="center"
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/border_color"
+            android:background="@drawable/border_color_orange"
             android:textSize="25dp"
             android:textStyle="bold"
             android:textAllCaps="false"

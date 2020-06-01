@@ -1,47 +1,24 @@
 package com.example.shippers;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.CompoundButton;
-import android.widget.ListView;
-import android.widget.Switch;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.shippers.Adapter.OrdersFragmentAdapter;
 import com.example.shippers.Fragment.FragmentGetOrder;
 import com.example.shippers.Fragment.FragmentOption;
 import com.example.shippers.Fragment.FragmentOrders;
 import com.example.shippers.Fragment.FragmentPickUp;
-import com.example.shippers.SQLite.DatabaseContext;
-import com.example.shippers.login.Activity.LoginPassword;
 import com.google.android.material.tabs.TabLayout;
-
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.List;
-import java.util.TooManyListenersException;
 
 ///Summary
 ///+Không thể truyền dữ liệu theo phương thức khởi tạo, chỉ có thể truyền bằng intent

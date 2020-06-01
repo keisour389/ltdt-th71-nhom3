@@ -1,6 +1,5 @@
 package com.example.shippers.Fragment;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -12,22 +11,23 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.shippers.API.OrdersFoodAPI;
+import com.example.shippers.API.Req.OrderDetails;
+import com.example.shippers.API.Req.OrderDetailsData;
 import com.example.shippers.API.Req.OrdersData;
 import com.example.shippers.API.Req.Orders;
 import com.example.shippers.API.Req.UpdateStatus;
 import com.example.shippers.R;
 import com.example.shippers.SQLite.DatabaseContext;
-import com.example.shippers.ShippersMainActivity;
-import com.example.shippers.login.Activity.LoginPassword;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -60,7 +60,10 @@ public class FragmentGetOrder extends Fragment {
     Button buttonGet;
     View view;
     ScrollView orderScrollView;
-
+    //Các biến truyền vào adapter
+    private ArrayList<String> foodName = new ArrayList<>();
+    private ArrayList<Integer> foodAmount = new ArrayList<>();
+    private ArrayList<Integer> foodPrice = new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -72,7 +75,6 @@ public class FragmentGetOrder extends Fragment {
         totalShipFee = (TextView) view.findViewById(R.id.totalShipFee);
         pickUpAddress = (TextView) view.findViewById(R.id.pickUpAddress);
         shipAddress = (TextView) view.findViewById(R.id.shipAddress);
-        moneyPaid = (TextView) view.findViewById(R.id.moneyPaid);
         note = (TextView) view.findViewById(R.id.note);
         phonePickUp = (TextView) view.findViewById(R.id.phonePickUp);
         phoneShip = (TextView) view.findViewById(R.id.phoneShip);
@@ -222,9 +224,15 @@ public class FragmentGetOrder extends Fragment {
                 orderStatus.setText(orderSearchByID[0].getStatus());
                 orderTime.setText(orderSearchByID[0].getCreatedDate());
                 note.setText(orderSearchByID[0].getNote());
-                phonePickUp.setText("0902725706");
+                phonePickUp.setText(orderSearchByID[0].getPhoneNumber());
                 //Số điện thoại của người đặt hàng có thể khác thông tin cá nhân
                 phoneShip.setText(orderSearchByID[0].getPhoneNumber());
+                //Địa chỉ
+                pickUpAddress.setText(orderSearchByID[0].getPickUpAddress());
+                shipAddress.setText(orderSearchByID[0].getShipAddress());
+                //Tiền ship
+                totalShipFee.setText(String.valueOf(orderSearchByID[0].getShippingCost()) +
+                        "VNĐ");
                 //Lấy trạng thái hiện tại của đơn hàng
                 getOrderStatus(orderSearchByID[0].getStatus());
                 //Còn 1 số thuộc tính khác chưa gán

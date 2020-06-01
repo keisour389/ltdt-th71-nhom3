@@ -81,9 +81,10 @@
                     android:id="@+id/ordersPriceId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#f000"
+                    android:textColor="@color/colorOrange"
+                    android:textStyle="bold"
                     android:text="Đây là giá tiền."
-                    android:textSize="20dp">
+                    android:textSize="25dp">
                 </TextView>
             </FrameLayout>
 

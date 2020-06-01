@@ -1,4 +1,4 @@
-package com.example.shippers.login.Activity;
+package com.example.shippers.Login.Activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +16,6 @@ import android.widget.Toast;
 import com.example.shippers.API.OrdersFoodAPI;
 import com.example.shippers.API.Req.Users;
 import com.example.shippers.API.Req.UsersData;
-import com.example.shippers.Common.Account;
 import com.example.shippers.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

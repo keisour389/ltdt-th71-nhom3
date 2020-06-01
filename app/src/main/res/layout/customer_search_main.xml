@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Customer.CustomerMainSearch">
+
+    <SearchView
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:queryHint="Tìm thử món ăn bạn yêu thích đi nào..."
+        android:background="#FFFF"
+        ></SearchView>
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:layout_marginTop="20dp"
+            android:id="@+id/viewpager_promotions"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+        </androidx.viewpager.widget.ViewPager>
+
+        <GridView
+            android:id="@+id/category_group"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:columnWidth="50dp"
+            android:numColumns="4">
+
+        </GridView>
+
+
+</LinearLayout>

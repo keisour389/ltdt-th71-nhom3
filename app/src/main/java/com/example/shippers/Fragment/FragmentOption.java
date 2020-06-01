@@ -11,22 +11,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.shippers.API.OrdersFoodAPI;
-import com.example.shippers.API.Req.Orders;
-import com.example.shippers.API.Req.OrdersData;
 import com.example.shippers.API.Req.Users;
 import com.example.shippers.API.Req.UsersData;
 import com.example.shippers.R;
 import com.example.shippers.SQLite.DatabaseContext;
-import com.example.shippers.login.Activity.LoginPassword;
-import com.example.shippers.login.Activity.MainLogin;
-import com.example.shippers.login.Activity.SignInAndSignUp;
+import com.example.shippers.Login.Activity.MainLogin;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

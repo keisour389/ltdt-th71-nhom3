@@ -1,0 +1,167 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:background="@drawable/border_color_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/customerAddressInOrderLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textColor="@color/colorOrange"
+                android:text="Đơn hàng sẽ được giao đến địa chỉ"/>
+            <View
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#e3e3de"/>
+            <TextView
+                android:id="@+id/customerAddressInOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#F000"
+                android:text="371 Nguyễn Kiệm, Phường 3 , Quận Gò Vấp, TpHCM"/>
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/border_color_black"
+            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/customerNumberPhoneInOrderLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textColor="@color/colorOrange"
+                android:text="Số điện thoại của bạn"/>
+            <View
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#e3e3de"/>
+            <TextView
+                android:id="@+id/customerNumberPhoneInOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#F000"
+                android:text="0902725706"/>
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/border_color_black"
+            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/customerOrderListInOrderLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textColor="@color/colorOrange"
+                android:text="Vui lòng kiểm tra lại đơn hàng"/>
+            <View
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#e3e3de"/>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+                <TableRow>
+                    <TextView
+                        android:textSize="20dp"
+                        android:textColor="#F000"
+                        android:text="Tên món"></TextView>
+                    <TextView
+                        android:textSize="20dp"
+                        android:textColor="#F000"
+                        android:textAlignment="center"
+                        android:text="Số lượng"></TextView>
+                    <TextView
+                        android:textSize="20dp"
+                        android:textColor="#F000"
+                        android:textAlignment="viewEnd"
+                        android:text="Giá tiền"></TextView>
+                </TableRow>
+            </TableLayout>
+            <ListView
+                android:id="@+id/customerOrderListInOrder"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:textSize="20dp"
+                android:textColor="#F000" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/border_color_black"
+            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/customerNoteInOrderLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textColor="@color/colorOrange"
+                android:text="Ghi chú cho tài xế"/>
+            <View
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#e3e3de"/>
+            <EditText
+                android:id="@+id/customerNoteInOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#F000"
+                android:text="Đây là ghi chú"/>
+        </LinearLayout>
+        <!--Xác nhận đặt hàng-->
+        <TableLayout
+            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+            <TableRow>
+                <Button
+                    android:id="@+id/returnRestaurant"
+                    android:textAllCaps="false"
+                    android:background="@drawable/border_color_orange"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorOrange"
+                    android:textSize="30dp"
+                    android:text="Quay Lại"/>
+                <Button
+                    android:id="@+id/customerOrderComplete"
+                    android:textAllCaps="false"
+                    android:background="@color/colorOrange"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp"
+                    android:text="Đặt hàng"/>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>

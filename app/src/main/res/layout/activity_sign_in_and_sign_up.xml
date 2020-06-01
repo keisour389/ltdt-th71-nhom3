@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login.Activity.SignInAndSignUp"
+    tools:context=".Login.Activity.SignInAndSignUp"
     android:background="@drawable/login_background">
     <LinearLayout
         android:layout_gravity="bottom|center"
@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/border_color"
+            android:background="@drawable/border_color_orange"
             android:textSize="25dp"
             android:textAllCaps="false"
             android:textColor="#eb6a1a"

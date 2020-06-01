@@ -11,44 +11,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme2">
-        <!--<activity android:name=".login.Activity.SignInAndSignUp"></activity>-->
-
-<!--         <activity android:name=".TestAPI"></activity>-->
-        <activity
-            android:name=".login.Activity.MainLogin"
-            android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <!--TEST-->
+<!--        <activity android:name=".Customer.RestaurantsDishes"></activity>-->
+        <!-- <activity android:name=".Customer.CustomerSearchedRestaurant"></activity> -->
+         <activity android:name=".Customer.CustomerOrderCompleted"></activity>
+        <!-- <activity android:name=".login.Activity.SignInAndSignUp"></activity> -->
+        <!-- <activity android:name=".TestAPI"></activity> -->
 <!--        <activity-->
-<!--            android:name=".ShippersMainActivity"-->
-<!--            android:theme="@style/AppTheme2">-->
+<!--            android:name=".Customer.RestaurantsDishes"-->
+<!--            android:theme="@style/AppTheme">-->
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
 <!--        </activity>-->
-<!--        orders-->
-        <activity android:name=".ShippersMainActivity"/>
+        <!-- TEST -->
+         <activity
+             android:name=".Login.Activity.MainLogin"
+             android:theme="@style/AppTheme">
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
+        <!-- orders -->
+        <activity android:name=".ShippersMainActivity" />
         <activity
             android:name=".GetOrderActivity"
-            android:label="@string/app_name" />
-        <!-- Login -->
+            android:label="@string/app_name" /> <!-- Login -->
         <activity
-            android:name=".login.Activity.SignInAndSignUp"
-            android:theme="@style/AppTheme"
-            />
-        <activity android:name=".login.Activity.CreatePassword" />
-        <activity android:name=".login.Activity.LoginPassword" />
-        <activity android:name=".login.Activity.CreatePhoneNumber" />
-        <activity android:name=".login.Activity.LoginPhoneNumber" />
-        <activity android:name=".login.Activity.FormCreateAccount" />
-
+            android:name=".Login.Activity.SignInAndSignUp"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Login.Activity.CreatePassword" />
+        <activity android:name=".Login.Activity.LoginPassword" />
+        <activity android:name=".Login.Activity.CreatePhoneNumber" />
+        <activity android:name=".Login.Activity.LoginPhoneNumber" />
+        <activity android:name=".Login.Activity.FormCreateAccount" />
     </application>
 
 </manifest>

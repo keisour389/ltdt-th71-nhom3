@@ -1,0 +1,80 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:descendantFocusability="blocksDescendants"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <ImageView
+        android:id="@+id/restaurantImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+        <LinearLayout
+            android:layout_gravity="left|top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/restaurantName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#F000"
+                android:textSize="20dp"
+                android:text="Tên nhà hàng"/>
+            <TextView
+                android:id="@+id/restaurantStatus"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="#8a8787"
+                android:text="Trạng thái"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_gravity="bottom|left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/restaurantOpenTimeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#F000"
+                android:textSize="17dp"
+                android:text="Mở cửa: "/>
+            <TextView
+                android:id="@+id/restaurantOpenTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF00"
+                android:textSize="17dp"
+                android:text="00:00 am"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_gravity="bottom|right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/restaurantCloseTimeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#F000"
+                android:textSize="17dp"
+                android:text="Đóng cửa: "/>
+            <TextView
+                android:id="@+id/restaurantCloseTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF00"
+                android:textSize="17dp"
+                android:text="00:00 pm"/>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

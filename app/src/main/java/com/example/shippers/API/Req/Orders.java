@@ -31,6 +31,12 @@ public class Orders {
     private String shipperId;
     @SerializedName("adminId")
     private String adminId;
+    @SerializedName("pickUpAddress")
+    private String pickUpAddress;
+    @SerializedName("shipAddress")
+    private String shipAddress;
+    @SerializedName("shippingCost")
+    private Integer shippingCost;
     @SerializedName("created_at")
     private String created_at;
     @SerializedName("updated_at")
@@ -66,6 +72,17 @@ public class Orders {
     public String getAdminId() {return this.adminId;}
     public String getCreated_at() {return this.created_at;}
     public String getUpdated_at() {return this.updated_at;}
+    public String getPickUpAddress() {
+        return pickUpAddress;
+    }
+
+    public String getShipAddress() {
+        return shipAddress;
+    }
+
+    public Integer getShippingCost() {
+        return shippingCost;
+    }
     //set
     public void setOrderId(int orderId) {
         this.orderId = orderId;
@@ -107,5 +124,15 @@ public class Orders {
         this.adminId = adminId;
     }
 
+    public void setPickUpAddress(String pickUpAddress) {
+        this.pickUpAddress = pickUpAddress;
+    }
 
+    public void setShipAddress(String shipAddress) {
+        this.shipAddress = shipAddress;
+    }
+
+    public void setShippingCost(Integer shippingCost) {
+        this.shippingCost = shippingCost;
+    }
 }

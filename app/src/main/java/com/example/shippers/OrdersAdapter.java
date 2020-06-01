@@ -19,16 +19,19 @@ public class OrdersAdapter extends ArrayAdapter<String> {
     private ArrayList<String> pickUpAddress;
     private ArrayList<String> shipAddress;
     private ArrayList<String> note;
+    private ArrayList<Integer> shipFee;
     private String textTitle;
-    private String textTilteColor;
+    private String textTitleColor;
 
+
+    //Phương thức khởi tạo của khách hàng
     public OrdersAdapter(Activity contextActivity,
                          ArrayList<Integer> orderId,
                          ArrayList<String> pickUpAddress,
                          ArrayList<String> shipAddress,
                          ArrayList<String> note,
                          String textTitle,
-                         String textTilteColor)
+                         String textTitleColor)
     {
         super(contextActivity, R.layout.orders_frame, pickUpAddress); //Trả thử về pickUpAddress
         //Get values
@@ -38,7 +41,29 @@ public class OrdersAdapter extends ArrayAdapter<String> {
         this.pickUpAddress = pickUpAddress;
         this.shipAddress = shipAddress;
         this.textTitle = textTitle;
-        this.textTilteColor = textTilteColor;
+        this.textTitleColor = textTitleColor;
+    }
+
+    //Phương thức khỏi tạo của shippers
+    public OrdersAdapter(Activity contextActivity,
+                         ArrayList<Integer> orderId,
+                         ArrayList<String> pickUpAddress,
+                         ArrayList<String> shipAddress,
+                         ArrayList<String> note,
+                         ArrayList<Integer> shipFee,
+                         String textTitle,
+                         String textTitleColor)
+    {
+        super(contextActivity, R.layout.orders_frame, pickUpAddress); //Trả thử về pickUpAddress
+        //Get values
+        this.contextActivity = contextActivity;
+        this.orderId = orderId;
+        this.note = note;
+        this.pickUpAddress = pickUpAddress;
+        this.shipAddress = shipAddress;
+        this.shipFee = shipFee;
+        this.textTitle = textTitle;
+        this.textTitleColor = textTitleColor;
     }
 
     @Override
@@ -51,14 +76,16 @@ public class OrdersAdapter extends ArrayAdapter<String> {
         TextView sAddress = (TextView) rowValue.findViewById(R.id.shipAddressId);
         TextView oId = (TextView) rowValue.findViewById(R.id.ordersId);
         TextView nOte = (TextView) rowValue.findViewById(R.id.ordersNoteId);
+        TextView shipCost = (TextView) rowValue.findViewById(R.id.ordersPriceId);
         //Set title
         titleOrders.setText(textTitle);
-        titleOrders.setBackgroundColor(Color.parseColor(textTilteColor)); //Parse color
+        titleOrders.setBackgroundColor(Color.parseColor(textTitleColor)); //Parse color
         //Set body
         oId.setText("Mã đơn hàng: " + orderId.get(position).toString()); //toString vì id là số
         pAddress.setText("Nhận hàng: " + pickUpAddress.get(position));
         sAddress.setText("Giao hàng: " + shipAddress.get(position));
         nOte.setText("Ghi chú: " + note.get(position));
+        shipCost.setText(shipFee.get(position).toString() + " VNĐ");
         //
         return rowValue;
     }

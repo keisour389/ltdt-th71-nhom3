@@ -1,6 +1,12 @@
 package com.example.shippers.API;
 
+import com.example.shippers.API.Req.CreateOrderData;
 import com.example.shippers.API.Req.CreateUserData;
+import com.example.shippers.API.Req.DishsData;
+import com.example.shippers.API.Req.OrderDetails;
+import com.example.shippers.API.Req.OrderDetailsCreateData;
+import com.example.shippers.API.Req.OrderDetailsData;
+import com.example.shippers.API.Req.RestaurantsData;
 import com.example.shippers.API.Req.Orders;
 import com.example.shippers.API.Req.OrdersData;
 import com.example.shippers.API.Req.UpdateStatus;
@@ -35,6 +41,8 @@ public interface OrdersFoodAPI {
     @POST("api/Order/update")
     Call<UpdateStatus> updateOrdersStatus(@Body Orders orders); //Update theo Body Orders
 
+    @POST("api/Order/create")
+    Call<CreateOrderData> createOrders(@Body Orders orders); //Update theo Body Orders
     //Users
     @FormUrlEncoded
     @POST("api/Users/get-by-user-name")
@@ -42,4 +50,24 @@ public interface OrdersFoodAPI {
 
     @POST("api/Users/create")
     Call<CreateUserData> createUser(@Body Users users); //Post id theo request
+
+    //Restaurant
+    @POST("api/Restaurant/get-all") //Lấy hết nhà hàng về
+    Call<RestaurantsData> getAllRestaurant();
+
+    //Dishes
+    @POST("api/Dish/get-all") //Lấy hết món ăn về
+    Call<DishsData> getAllDishes();
+
+    @FormUrlEncoded
+    @POST("api/Dish/get-by-dish-id") //Lấy món theo Id
+    Call<DishsData> getDishById(@Field("dishId") String dishId);
+
+    //Order Details
+    @POST("api/OrderDetail/create")
+    Call<OrderDetailsCreateData> createOrderDetails(@Body OrderDetails orderDetails); //Post id theo request
+
+    @FormUrlEncoded
+    @POST("api/OrderDetail/get-by-order-id")
+    Call<OrderDetailsData> getOrderDetailsById(@Field("orderId") String orderId);
 }

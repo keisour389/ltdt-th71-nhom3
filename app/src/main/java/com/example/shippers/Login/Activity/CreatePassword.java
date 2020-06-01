@@ -1,4 +1,4 @@
-package com.example.shippers.login.Activity;
+package com.example.shippers.Login.Activity;
 
 import android.content.Context;
 import android.content.Intent;

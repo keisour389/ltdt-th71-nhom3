@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Customer.CustomerOrderCompleted">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--Chứa trạng thái đơn hàng-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/customerOrderIdLabel"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorOrange"
+                    android:textSize="25dp"
+                    android:text="Mã đơn hàng"/>
+                <TextView
+                    android:id="@+id/searchShipperLabel"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="#F000"
+                    android:text="Đã tìm thấy tài xế"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:id="@+id/customerOrderStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#F000"
+                    android:textSize="35dp"
+                    android:text="Tình trạng đơn hàng"/>
+
+            </LinearLayout>
+        </FrameLayout>
+        <!--Từng trạng thái của đơn hàng-->
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center|bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+            <TableLayout
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*">
+                <TableRow>
+                    <TextView
+                        android:id="@+id/customerOrderChecking"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textColor="#a7aba6"
+                        android:text="Đang \n kiểm tra"/>
+                    <TextView
+                        android:id="@+id/customerOrderPrepare"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textColor="#a7aba6"
+                        android:text="Đang \n chuẩn bị"/>
+                    <TextView
+                        android:id="@+id/customerOrderShipping"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textColor="#a7aba6"
+                        android:text="Đang \n giao hàng"/>
+                    <TextView
+                        android:id="@+id/customerOrderCompleted"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textColor="#a7aba6"
+                        android:text="Đã \n đến nơi"/>
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+        <View
+            android:layout_marginTop="20dp"
+            android:background="#F000"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <!--Hiện thị thông tin tài xế-->
+        <LinearLayout
+            android:id="@+id/shipperInfoInCusOrder"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:id="@+id/shipperLableInCusOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:textColor="@color/colorOrange"
+                android:text="Tài xế" />
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/shipperImageInCusOrder"
+                    android:background="@drawable/shipper_avatar"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"/>
+                <LinearLayout
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/shipperNameInCusOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#F000"
+                        android:textSize="25dp"
+                        android:text="Họ tên: "/>
+                    <TextView
+                        android:id="@+id/shipperPhoneNumberInCusOrder"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#F000"
+                        android:textSize="25dp"
+                        android:text="Số điện thoại: "/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_marginTop="20dp"
+            android:background="#F000"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <!--Hóa đơn-->
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/billInCustomerOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:textColor="@color/colorOrange"
+                android:text="Hóa đơn"/>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+                <TableRow>
+                    <TextView
+                        android:textSize="20dp"
+                        android:textColor="#F000"
+                        android:text="Tên món"></TextView>
+                    <TextView
+                        android:textSize="20dp"
+                        android:textColor="#F000"
+                        android:textAlignment="center"
+                        android:text="Số lượng"></TextView>
+                    <TextView
+                        android:textSize="20dp"
+                        android:textColor="#F000"
+                        android:textAlignment="viewEnd"
+                        android:text="Giá tiền"></TextView>
+                </TableRow>
+            </TableLayout>
+            <!--Lưu số lượng món trong hóa đơn từ adapter-->
+            <ListView
+                android:id="@+id/foodListCustomerOrder"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:id="@+id/shippingCostInCusOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:textSize="20dp"
+                android:textColor="#F000"
+                android:text="Phí giao hàng: "/>
+            <TextView
+                android:id="@+id/totalPriceInCusOrder"
+                android:layout_marginTop="5dp"
+                android:textAlignment="textEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:textColor="#FF00"
+                android:text="Tổng cộng:" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="20dp"
+            android:background="#F000"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <!--Các thông tin còn lại-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/addressInCustomerOrderLabel"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:textColor="@color/colorOrange"
+                android:text="Địa chỉ nhận hàng"/>
+            <TextView
+                android:id="@+id/addressInCustomerOrder"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#F000"
+                android:text="371 Nguyễn Kiệm. Phòng 101"/>
+            <View
+                android:layout_marginTop="10dp"
+                android:background="#F000"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:id="@+id/noteInCustomerOrderLabel"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:textColor="@color/colorOrange"
+                android:text="Ghi chú đơn hàng"/>
+            <TextView
+                android:id="@+id/noteInCustomerOrder"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#F000"
+                android:text="Kêu bà bán bún chửi đừng chửi nhiều quá nha. Em cảm ơn ạ"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

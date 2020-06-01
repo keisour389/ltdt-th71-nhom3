@@ -1,4 +1,4 @@
-package com.example.shippers.login.Activity;
+package com.example.shippers.Login.Activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +20,6 @@ import android.widget.Toast;
 import com.example.shippers.API.OrdersFoodAPI;
 import com.example.shippers.API.Req.CreateUserData;
 import com.example.shippers.API.Req.Users;
-import com.example.shippers.API.Req.UsersData;
 import com.example.shippers.Common.Account;
 import com.example.shippers.R;
 import com.google.android.material.textfield.TextInputEditText;
@@ -264,7 +263,7 @@ public class FormCreateAccount extends AppCompatActivity {
         users.setEmail(edTEmail.getText().toString());
         //Các thông tin hệ thống tạo
         users.setTypeUserId(accountType);
-        users.setStatus("Normal"); //Tạm thời chưa để hơn 10 kí tự
+        users.setStatus("Bình thường"); //Tạm thời chưa để hơn 10 kí tự
         users.setCreatedDate(today);
     }
     @Override

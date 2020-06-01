@@ -1,0 +1,39 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*">
+            <TextView
+                android:id="@+id/foodNameInCusOrder"
+                android:layout_gravity="left|center"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textColor="#F000"
+                android:textSize="20dp"
+                android:text="Món ăn"/>
+            <TextView
+                android:id="@+id/foodAmountInCusOrder"
+                android:layout_gravity="center"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorOrange"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:text="Số lượng"/>
+            <TextView
+                android:id="@+id/foodPriceInCusOrder"
+                android:layout_gravity="right|center"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:textAlignment="textEnd"
+                android:textColor="#F000"
+                android:textSize="20dp"
+                android:text="Đơn giá"
+                tools:ignore="RtlCompat" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

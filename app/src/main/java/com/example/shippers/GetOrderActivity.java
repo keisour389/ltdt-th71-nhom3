@@ -53,7 +53,6 @@ public class GetOrderActivity extends AppCompatActivity {
         totalShipFee = (TextView) findViewById(R.id.totalShipFee);
         pickUpAddress = (TextView) findViewById(R.id.pickUpAddress);
         shipAddress = (TextView) findViewById(R.id.shipAddress);
-        moneyPaid = (TextView) findViewById(R.id.moneyPaid);
         note = (TextView) findViewById(R.id.note);
         phonePickUp = (TextView) findViewById(R.id.phonePickUp);
         phoneShip = (TextView) findViewById(R.id.phoneShip);

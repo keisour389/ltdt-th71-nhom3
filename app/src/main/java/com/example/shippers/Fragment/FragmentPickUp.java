@@ -28,12 +28,10 @@ import com.example.shippers.SQLite.DatabaseContext;
 import com.example.shippers.ShippersMainActivity;
 import com.example.shippers.OrdersAdapter;
 import com.example.shippers.R;
-import com.example.shippers.login.Activity.LoginPassword;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -90,10 +88,12 @@ public class FragmentPickUp extends Fragment {
     public void allOrders(final String status)
     {
         //
+        final ArrayList<String> orderName = new ArrayList<>();
         final ArrayList<Integer> orderId = new ArrayList<>();
-        final ArrayList<String> note = new ArrayList<>();
+        final ArrayList<String> orderNote = new ArrayList<>();
         final ArrayList<String> pickUpAddress = new ArrayList<>();
         final ArrayList<String> shipAddress = new ArrayList<>();
+        final ArrayList<Integer> orderFee = new ArrayList<>();
         Gson gson = new GsonBuilder().serializeNulls().create();
         //Khởi tạo retrofit
         Retrofit retrofit = new Retrofit.Builder()
@@ -120,15 +120,21 @@ public class FragmentPickUp extends Fragment {
                     if(order.getStatus().equals(status))
                     {
                         //Gán giá trị vào
+                        orderName.add(order.getName());
                         orderId.add(order.getOrderId());
-                        pickUpAddress.add("Quận " + index);
-                        shipAddress.add("Quận " + index);
-                        note.add(order.getNote());
+                        //Tạm thời chưa split, chờ CSDL chính thức
+//                        pickUpAddress.add("Quận " + splitAddress(order.getPickUpAddress()));
+//                        shipAddress.add("Quận " + splitAddress(order.getShipAddress()));
+                        pickUpAddress.add(order.getPickUpAddress());
+                        shipAddress.add(order.getShipAddress());
+                        orderNote.add(order.getNote());
+                        orderFee.add(order.getShippingCost());
                         index++;
                     }
                 }
                 //Triển khai adapter
-                ordersAdapter = new OrdersAdapter(getActivity(), orderId, pickUpAddress, shipAddress, note, "Đơn hàng mới", "#fa9702");
+                ordersAdapter = new OrdersAdapter(getActivity(), orderId, pickUpAddress, shipAddress, orderNote,
+                        orderFee, "Đơn hàng LaLaFood", "#fa9702");
                 ordersListView.setAdapter(ordersAdapter);
                 //Xử lí switch
                 //Khi con switch thay đổi
@@ -204,5 +210,11 @@ public class FragmentPickUp extends Fragment {
             Log.d("AccountDatabase", result);
         }
         return result;
+    }
+    //Split District From Address
+    private String splitAddress(String address)
+    {
+        String[] list = address.split(","); //Cách nhau bằng dấu phẩy
+        return list[1]; //Quận nằm giữa
     }
 }
