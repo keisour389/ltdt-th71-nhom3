@@ -45,14 +45,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#F000"
-                android:textSize="17dp"
+                android:textSize="12sp"
                 android:text="Mở cửa: "/>
             <TextView
                 android:id="@+id/restaurantOpenTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FF00"
-                android:textSize="17dp"
+                android:textSize="12sp"
                 android:text="00:00 am"/>
         </LinearLayout>
         <LinearLayout
@@ -65,14 +65,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#F000"
-                android:textSize="17dp"
+                android:textSize="12sp"
                 android:text="Đóng cửa: "/>
             <TextView
                 android:id="@+id/restaurantCloseTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FF00"
-                android:textSize="17dp"
+                android:textSize="12sp"
                 android:text="00:00 pm"/>
         </LinearLayout>
     </FrameLayout>

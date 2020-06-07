@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_background"
-    tools:context="com.example.shippers.Login.Activity.MainLogin">
+    tools:context="com.example.lalafood.Login.Activity.MainLogin">
     <LinearLayout
         android:layout_margin="10dp"
         android:layout_gravity="center"

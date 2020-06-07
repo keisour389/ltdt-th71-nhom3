@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     <!--Các đơn hàng-->
     <!--android:descendantFocusability="blocksDescendants" cho phép để click vào child item -->
     <LinearLayout
@@ -74,7 +74,7 @@
                     android:layout_height="wrap_content"
                     android:text="Đây là ghi chú."
                     android:textColor="#f000"
-                    android:textSize="20dp">
+                    android:textSize="20sp">
                 </TextView>
                 <TextView
                     android:layout_gravity="right"
@@ -84,7 +84,7 @@
                     android:textColor="@color/colorOrange"
                     android:textStyle="bold"
                     android:text="Đây là giá tiền."
-                    android:textSize="25dp">
+                    android:textSize="20sp">
                 </TextView>
             </FrameLayout>
 

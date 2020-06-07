@@ -68,7 +68,7 @@
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
-                        android:textSize="20dp"
+                        android:textSize="15sp"
                         android:textColor="#a7aba6"
                         android:text="Đang \n kiểm tra"/>
                     <TextView
@@ -76,7 +76,7 @@
                         android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
-                        android:textSize="20dp"
+                        android:textSize="15sp"
                         android:textColor="#a7aba6"
                         android:text="Đang \n chuẩn bị"/>
                     <TextView
@@ -84,7 +84,7 @@
                         android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
-                        android:textSize="20dp"
+                        android:textSize="15sp"
                         android:textColor="#a7aba6"
                         android:text="Đang \n giao hàng"/>
                     <TextView
@@ -92,17 +92,12 @@
                         android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
-                        android:textSize="20dp"
+                        android:textSize="15sp"
                         android:textColor="#a7aba6"
                         android:text="Đã \n đến nơi"/>
                 </TableRow>
             </TableLayout>
         </LinearLayout>
-        <View
-            android:layout_marginTop="20dp"
-            android:background="#F000"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"/>
         <!--Hiện thị thông tin tài xế-->
         <LinearLayout
             android:id="@+id/shipperInfoInCusOrder"

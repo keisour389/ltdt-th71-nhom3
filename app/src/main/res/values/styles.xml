@@ -9,6 +9,7 @@
         <item name="actionMenuTextColor">@android:color/white</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
+
     <style name="AppTheme2" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@android:color/white</item>
@@ -16,7 +17,23 @@
         <item name="colorAccent">@color/colorOrange</item>
         <item name="android:textColorPrimary">@android:color/black</item>
     </style>
+    <style name="NavigationTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@android:color/black</item>
+        <item name="colorPrimaryDark">@color/colorOrange</item>
+        <item name="colorAccent">@color/colorOrange</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
     <style name="MyTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
         <item name="android:textColor">@android:color/black</item>
     </style>
+
+    <style name="AppTheme2.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme2.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme2.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

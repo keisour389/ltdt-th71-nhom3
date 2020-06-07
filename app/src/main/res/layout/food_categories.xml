@@ -9,6 +9,9 @@
             android:id="@+id/categoryPic"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:padding="2dp"
+            android:background="@drawable/border_color_black"
             >
         </ImageView>
     </androidx.constraintlayout.widget.ConstraintLayout>

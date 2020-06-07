@@ -53,7 +53,7 @@
         android:id="@+id/totalFrame"
         android:layout_gravity="bottom"
         android:background="@color/colorOrange"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
