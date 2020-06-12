@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login.Login.LoginPhoneNumber">
+    tools:context=".Login.Activity.LoginPhoneNumber">
     <View
         android:background="@color/colorOrange"
         android:layout_width="match_parent"
-        android:layout_height="2dp"></View>
+        android:layout_height="2dp">
+    </View>
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="AppOrder xin chào!"
+        android:text="@string/hello"
         android:textColor="@color/colorOrange"
         android:textSize="30sp"
         android:textStyle="bold|italic"
@@ -29,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
         android:inputType="phone"
-        android:text="Số điện thoại của bạn là gì?"
+        android:text="@string/enter_phone_number"
         android:textColor="@color/colorOrange"
         android:textSize="30sp"
         android:textStyle="italic"
@@ -44,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
         android:background="@color/colorOrange"
-        android:text="Tiếp Theo"
+        android:text="@string/next_phone_number"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="normal"
@@ -60,7 +61,7 @@
         android:ems="10"
         android:enabled="true"
         android:fadeScrollbars="false"
-        android:hint="Nhập số điện thoại"
+        android:hint="@string/hint_phone_number"
         android:inputType="phone"
         android:textColor="@color/colorOrange"
         android:textSize="24sp"

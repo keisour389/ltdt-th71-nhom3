@@ -14,8 +14,8 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:textColor="#F000"
-                android:textSize="20dp"
-                android:text="Món ăn"/>
+                android:textSize="20sp"
+                android:text="@string/dish"/>
             <TextView
                 android:id="@+id/foodAmountInCusOrder"
                 android:layout_gravity="center"
@@ -23,8 +23,8 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorOrange"
                 android:textAlignment="center"
-                android:textSize="20dp"
-                android:text="Số lượng"/>
+                android:textSize="20sp"
+                android:text="@string/dish_count"/>
             <TextView
                 android:id="@+id/foodPriceInCusOrder"
                 android:layout_gravity="right|center"
@@ -32,8 +32,8 @@
                 android:layout_height="match_parent"
                 android:textAlignment="textEnd"
                 android:textColor="#F000"
-                android:textSize="20dp"
-                android:text="Đơn giá"
+                android:textSize="20sp"
+                android:text="@string/single_price"
                 tools:ignore="RtlCompat" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

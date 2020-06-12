@@ -19,19 +19,19 @@
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="#F000"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:background="#FFFFFF"
-                android:text="Đóng"/>
+                android:text="@string/close"/>
         </FrameLayout>
         <TextView
             android:id="@+id/foodNameInFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textColor="@color/colorOrange"
             android:textStyle="bold"
-            android:text="Tên món"/>
+            android:text="@string/dish_name"/>
         <LinearLayout
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
@@ -43,14 +43,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:text="Giảm"/>
+                android:text="@string/decrease"/>
             <TextView
                 android:id="@+id/dishAmount"
                 android:layout_marginLeft="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#F000"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:text="1"/>
             <Button
                 android:id="@+id/buttonIncrease"
@@ -58,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:text="Tăng"/>
+                android:text="@string/increase"/>
         </LinearLayout>
     </LinearLayout>
     <!--Thêm-->
@@ -68,8 +68,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorOrange"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        android:text="Thêm món"/>
+        android:text="@string/get_more_dish"/>
 </FrameLayout>

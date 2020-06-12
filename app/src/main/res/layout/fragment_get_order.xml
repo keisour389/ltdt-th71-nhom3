@@ -30,8 +30,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Tình trạng"
-                        android:textSize="25dp"
+                        android:text="@string/status"
+                        android:textSize="25sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -39,8 +39,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
-                        android:text="Thời gian"
-                        android:textSize="25dp"
+                        android:text="@string/order_time"
+                        android:textSize="25sp"
                         android:textStyle="bold" />
                 </FrameLayout>
                 <!--Frame Layout 2-->
@@ -55,18 +55,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Trả bởi khách hàng:"
+                        android:text="@string/pay_type"
                         android:textColor="#f000"
-                        android:textSize="20dp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/shipFee"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
-                        android:text="Tiền mặt"
+                        android:text="@string/ship_fee_cash"
                         android:textColor="#f000"
-                        android:textSize="20dp" />
+                        android:textSize="20sp" />
                     <!--Đường kẻ-->
                     <View
                         android:layout_width="match_parent"
@@ -81,9 +81,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|left"
                         android:layout_marginTop="10dp"
-                        android:text="Tổng cộng"
+                        android:text="@string/total"
                         android:textColor="#f000"
-                        android:textSize="20dp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/totalShipFee"
@@ -91,9 +91,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|left"
                         android:layout_marginTop="20dp"
-                        android:text="VNĐ"
+                        android:text="VND"
                         android:textColor="#f000"
-                        android:textSize="20dp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/moreInfoLable"
@@ -101,9 +101,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|right"
                         android:layout_marginTop="20dp"
-                        android:text="Xem chi tiết"
+                        android:text="@string/more_info"
                         android:textColor="#FF5722"
-                        android:textSize="20dp" />
+                        android:textSize="20sp" />
                 </FrameLayout>
                 <!--Frame Layout 3-->
                 <LinearLayout
@@ -118,9 +118,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:text="Đơn hàng giao ngay"
+                        android:text="@string/order_type"
                         android:textColor="#f000"
-                        android:textSize="25dp" />
+                        android:textSize="25sp" />
                     <!--Đường kẻ-->
                     <View
                         android:layout_width="match_parent"
@@ -134,9 +134,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|left"
                         android:layout_marginTop="20px"
-                        android:text="Điểm nhận: 371 Nguyễn Kiệm F3 Quận Gò Vấp TpHCM"
+                        android:text="@string/pickup_address"
                         android:textColor="#f000"
-                        android:textSize="20dp" />
+                        android:textSize="20sp" />
                     <!--Số đt nhận-->
                     <TextView
                         android:id="@+id/phonePickUp"
@@ -144,9 +144,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10px"
                         android:background="#ededeb"
-                        android:textSize="0dp"
+                        android:textSize="0sp"
                         android:textColor="#f000"
-                        android:visibility="invisible"></TextView>
+                        android:visibility="invisible">
+                    </TextView>
 
                     <TextView
                         android:id="@+id/shipAddress"
@@ -154,9 +155,9 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center|left"
                         android:layout_marginTop="40px"
-                        android:text="Điểm giao: Thích giao đâu thì giao :))"
+                        android:text="@string/ship_address"
                         android:textColor="#f000"
-                        android:textSize="20dp" />
+                        android:textSize="20sp" />
                     <!--Số đt giao-->
                     <TextView
                         android:id="@+id/phoneShip"
@@ -164,9 +165,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10px"
                         android:background="#ededeb"
-                        android:textSize="0dp"
+                        android:textSize="0sp"
                         android:textColor="#f000"
-                        android:visibility="invisible"></TextView>
+                        android:visibility="invisible">
+                    </TextView>
                 </LinearLayout>
 
 
@@ -184,7 +186,8 @@
                         android:layout_height="wrap_content"
                         android:text="Ghi chú đơn hàng: "
                         android:textColor="#f000"
-                        android:textSize="20dp"></TextView>
+                        android:textSize="20sp">
+                    </TextView>
                     <!--Đường kẻ-->
                     <View
                         android:layout_width="match_parent"
@@ -199,7 +202,8 @@
                         android:layout_marginTop="10dp"
                         android:text="Ghi chú"
                         android:textColor="#f000"
-                        android:textSize="20dp"></TextView>
+                        android:textSize="20sp">
+                    </TextView>
                 </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -211,7 +215,7 @@
         android:background="#f7a305"
         android:text="Nhận hàng"
         android:layout_weight="1"
-        android:textSize="25dp" />
+        android:textSize="25sp" />
 
 </LinearLayout>
 

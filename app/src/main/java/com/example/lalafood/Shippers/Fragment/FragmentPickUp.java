@@ -67,7 +67,7 @@ public class FragmentPickUp extends Fragment {
                     public void run() {
                         //Khi refresh sẽ chạy vào các hàm này
                         ordersListView.removeAllViewsInLayout();
-                        allOrders("Nhận hàng");
+                        allOrders(getString(R.string.take_order));
                         Toast.makeText(getActivity(), "Refresh", Toast.LENGTH_SHORT).show();
                         newOrdersSwipeLayout.setRefreshing(false);
                     }
@@ -79,7 +79,7 @@ public class FragmentPickUp extends Fragment {
         ordersListView = (ListView) view.findViewById(R.id.ordersListId);
         //Làm mới layout
         ordersListView.removeAllViewsInLayout();
-        allOrders("Nhận hàng");
+        allOrders(getString(R.string.take_order));
         //Lấy tài khoản từ Shipper main
         Log.d("account", account);
         return view;
@@ -135,7 +135,7 @@ public class FragmentPickUp extends Fragment {
                 Log.d("index", String.valueOf(index));
                 //Triển khai adapter
                 ordersAdapter = new OrdersAdapter(getActivity(), orderId, pickUpAddress, shipAddress, orderNote,
-                        orderFee, "Đơn hàng LaLaFood", "#fa9702");
+                        orderFee, getString(R.string.lalafood_order), "#fa9702");
                 ordersListView.setAdapter(ordersAdapter);
                 //Xử lí switch
                 //Khi con switch thay đổi
@@ -166,8 +166,8 @@ public class FragmentPickUp extends Fragment {
             @Override
             public void onFailure(Call<OrdersData> call, Throwable t) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("Thông báo.")
-                        .setMessage("KHÔNG CÓ INTERNET")
+                builder.setTitle(getString(R.string.notice))
+                        .setMessage(getString(R.string.no_internet))
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -189,7 +189,7 @@ public class FragmentPickUp extends Fragment {
     {
         if (check) {
             ordersListView.setVisibility(View.VISIBLE);
-            allOrders("Nhận hàng");
+            allOrders(getString(R.string.take_order));
         } else {
             ordersListView.setVisibility(View.GONE);
             Toast.makeText(getContext(), "Ứng dụng đang nghĩ", Toast.LENGTH_SHORT).show();

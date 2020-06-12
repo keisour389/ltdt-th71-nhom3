@@ -14,7 +14,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@color/colorOrange"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textColor="#FFFFFF"
             android:text="X"/>
         <LinearLayout
@@ -28,16 +28,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:textAlignment="center"
-                android:text="Xin chào"/>
+                android:text="@string/"/>
             <TextView
                 android:id="@+id/customerNameInOptions"
                 android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:text="Nguyễn Văn A"/>
         </LinearLayout>
         <LinearLayout
@@ -50,9 +50,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:textAlignment="center"
-                android:text="Bạn chưa đăng nhập"/>
+                android:text="@string/not_signin"/>
            <TableLayout
                android:layout_marginTop="10dp"
                android:layout_width="match_parent"
@@ -66,8 +66,8 @@
                        android:background="@drawable/border_color_orange"
                        android:textColor="#FFFFFF"
                        android:textAllCaps="false"
-                       android:textSize="25dp"
-                       android:text="Đăng nhập"/>
+                       android:textSize="25sp"
+                       android:text="@string/sign_in"/>
                    <Button
                        android:id="@+id/buttonCustomerSignUp"
                        android:layout_marginLeft="2dp"
@@ -76,8 +76,8 @@
                        android:background="@drawable/border_color_orange"
                        android:textColor="#FFFFFF"
                        android:textAllCaps="false"
-                       android:textSize="25dp"
-                       android:text="Đăng kí"/>
+                       android:textSize="25sp"
+                       android:text="@string/sign_up"/>
                </TableRow>
            </TableLayout>
         </LinearLayout>
@@ -92,9 +92,9 @@
            android:layout_marginTop="10dp"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:textSize="30dp"
+           android:textSize="30sp"
            android:textColor="@color/colorOrange"
-           android:text="Cài đặt"/>
+           android:text="@string/option"/>
        <FrameLayout
            android:id="@+id/customerChangeLanguage"
            android:background="@drawable/border_color_orange"
@@ -105,15 +105,15 @@
                android:layout_gravity="center|left"
                android:layout_height="wrap_content"
                android:textColor="@color/colorOrange"
-               android:textSize="25dp"
-               android:text="Chuyển đổi ngôn ngữ"/>
+               android:textSize="25sp"
+               android:text="@string/change_language"/>
            <TextView
                android:layout_marginRight="10dp"
                android:layout_gravity="right|center"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:textColor="@color/colorOrange"
-               android:textSize="25dp"
+               android:textSize="25sp"
                android:text=">"/>
        </FrameLayout>
 
@@ -128,15 +128,15 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:textColor="@color/colorOrange"
-               android:textSize="25dp"
-               android:text="Đăng xuất"/>
+               android:textSize="25sp"
+               android:text="@string/sign_out"/>
            <TextView
                android:layout_marginRight="10dp"
                android:layout_gravity="right|center"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:textColor="@color/colorOrange"
-               android:textSize="25dp"
+               android:textSize="25sp"
                android:text=">"/>
        </FrameLayout>
    </LinearLayout>

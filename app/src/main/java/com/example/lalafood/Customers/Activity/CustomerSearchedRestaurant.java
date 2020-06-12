@@ -58,7 +58,7 @@ public class CustomerSearchedRestaurant extends AppCompatActivity {
         restaurantList = (ListView) findViewById(R.id.restaurantList);
         searchRestaurant = (TextView) findViewById(R.id.searchRestaurant);
         //Chỉnh title action bar
-        actionBar.setTitle("Tìm kiếm");
+        actionBar.setTitle(R.string.search);
         actionBar.setDisplayHomeAsUpEnabled(true);
         //Lấy kết quả tìm kiếm
         Intent intent = getIntent();

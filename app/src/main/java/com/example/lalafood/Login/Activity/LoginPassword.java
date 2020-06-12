@@ -59,14 +59,14 @@ public class LoginPassword extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (txtEMatKhau.getText().toString().isEmpty()) {
-                    txtEMatKhau.setError("VUI LÒNG KHÔNG ĐỂ TRỐNG !");
+                    txtEMatKhau.setError(getText(R.string.no_empty_password));
                 }
             }
         });
         //Nút quay lại
         actionBar.setDisplayHomeAsUpEnabled(true);
         //Set title
-        actionBar.setTitle("Đăng nhập");
+        actionBar.setTitle(getText(R.string.create_account));
         //Nhận giá trị từ intent
         Intent intent = getIntent();
         account = intent.getStringExtra(LoginPhoneNumber.ACCOUNT);
@@ -135,7 +135,7 @@ public class LoginPassword extends AppCompatActivity {
                         //Tạm thời get theo user name, chờ access token
                         if(!userAccount[0].getPassword().equals(password)) //Không sử dụng toán tử
                         {
-                            Toast.makeText(context, "Sai mật khẩu. Vui lòng nhập lại", Toast.LENGTH_LONG).show();
+                            Toast.makeText(context, R.string.wrong_password, Toast.LENGTH_LONG).show();
                         }
                         else
                         {
@@ -175,7 +175,7 @@ public class LoginPassword extends AppCompatActivity {
                         //Tạm thời get theo user name, chờ access token
                         if(!userAccount[0].getPassword().equals(password)) //Không sử dụng toán tử
                         {
-                            Toast.makeText(context, "Sai mật khẩu. Vui lòng nhập lại", Toast.LENGTH_LONG).show();
+                            Toast.makeText(context, R.string.wrong_password, Toast.LENGTH_LONG).show();
                         }
                         else
                         {

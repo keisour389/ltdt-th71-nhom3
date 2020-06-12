@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShippersMainActivity">
+    tools:context=".Shippers.Activity.ShippersMainActivity">
     <!--Scroll view chỉ hỗ trợ 1 child, nên phải gắn linear layout-->
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -31,7 +31,7 @@
                 android:layout_width="45dp"
                 android:layout_height="25dp"
                 android:checked="true"
-                android:text="Trạng thái: Làm việc"
+                android:text="@string/working_status_on"
                 android:textColor="@color/colorOrange"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

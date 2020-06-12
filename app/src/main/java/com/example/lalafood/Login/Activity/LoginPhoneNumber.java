@@ -50,7 +50,7 @@ public class LoginPhoneNumber extends AppCompatActivity {
         //Nút quay lại
         actionBar.setDisplayHomeAsUpEnabled(true);
         //Set title
-        actionBar.setTitle("Đăng nhập");
+        actionBar.setTitle(R.string.create_account);
         //Lấy AccountType
         Intent intent = getIntent();
         accountTypeId = intent.getIntExtra(SignInAndSignUp.LOGIN_TYPE_ID, 0); //Mặc định là 0
@@ -121,7 +121,7 @@ public class LoginPhoneNumber extends AppCompatActivity {
                     if(!userAccount[0].getUserName().equals(account) ||
                             !userAccount[0].getTypeUserId().equals(accountType)) //Không sử dụng toán tử
                     {
-                        Toast.makeText(context, "Số điện thoại không tồn tại.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, R.string.number_not_exist, Toast.LENGTH_LONG).show();
                     }
                     else
                     {
@@ -134,7 +134,7 @@ public class LoginPhoneNumber extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(context, "Số điện thoại này không tồn tại.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, R.string.number_not_exist, Toast.LENGTH_LONG).show();
                 }
             }
             @Override

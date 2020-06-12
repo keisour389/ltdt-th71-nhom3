@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     android:background="#FFFFFF"
-    tools:context=".Customer.CustomerMainSearch">
+    tools:context=".Customers.Activity.CustomerMainSearch">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
                 android:drawableLeft="@drawable/ic_room_black_24dp"
                 android:text="371 Nguyễn Kiệm, Phường 3, Quận Gò Vấp, TpHCM"
                 android:textColor="#F000"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <TextView
@@ -43,14 +43,15 @@
             android:layout_height="wrap_content"
             android:textSize="25dp"
             android:textColor="@color/colorOrange"
-            android:text="Tìm kiếm"/>
+            android:text="@string/search"/>
         <SearchView
             android:id="@+id/search_bar"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:queryHint="Tìm thử món ăn bạn yêu thích đi nào..."
             android:background="@drawable/border_color_black"
-            ></SearchView>
+            >
+        </SearchView>
 
 
         <androidx.viewpager.widget.ViewPager
@@ -63,9 +64,9 @@
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textColor="@color/colorOrange"
-            android:text="Danh mục yêu thích"/>
+            android:text="@string/fav_categories"/>
         <GridView
             android:id="@+id/category_group"
             android:layout_marginTop="10dp"

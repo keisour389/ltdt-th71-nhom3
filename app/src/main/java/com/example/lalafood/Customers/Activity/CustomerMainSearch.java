@@ -1,12 +1,14 @@
 package com.example.lalafood.Customers.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +29,8 @@ import com.example.lalafood.API.Req.Users;
 import com.example.lalafood.API.Req.UsersData;
 import com.example.lalafood.Customers.Adapter.CategoryAdapter;
 import com.example.lalafood.Customers.Adapter.CustomPagerAdapter;
+import com.example.lalafood.FragmentLanguage;
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.Login.Activity.CreatePhoneNumber;
 import com.example.lalafood.Login.Activity.LoginPhoneNumber;
 import com.example.lalafood.Login.Activity.MainLogin;
@@ -34,6 +38,8 @@ import com.example.lalafood.R;
 import com.example.lalafood.SQLite.DatabaseContext;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -62,6 +68,7 @@ public class CustomerMainSearch extends AppCompatActivity {
     private Button buttonCustomerSignUp;
     private TextView customerNameInOptions;
     private FrameLayout customerLogout;
+    private FrameLayout customerChangeLanguage;
     private Button closeCustomerOptions;
     private LinearLayout customerChooseOptions;
     //Database
@@ -114,6 +121,7 @@ public class CustomerMainSearch extends AppCompatActivity {
         buttonCustomerSignUp = includeCustomerOptions.findViewById(R.id.buttonCustomerSignUp);
         customerNameInOptions = includeCustomerOptions.findViewById(R.id.customerNameInOptions);
         customerLogout = includeCustomerOptions.findViewById(R.id.customerLogout);
+        customerChangeLanguage = includeCustomerOptions.findViewById(R.id.customerChangeLanguage);
         closeCustomerOptions = includeCustomerOptions.findViewById(R.id.closeCustomerOptions);
         customerChooseOptions = includeCustomerOptions.findViewById(R.id.customerChooseOptions);
         //Ẩn action bar
@@ -203,7 +211,7 @@ public class CustomerMainSearch extends AppCompatActivity {
             //Mở trạng thái chưa đăng nhập
             customerDontLoginIn.setVisibility(View.VISIBLE);
             //Chưa có địa chỉ
-            customerAddress.setText("Bạn chưa đăng nhập");//Địa chỉ cột 4
+            customerAddress.setText(R.string.not_signin);//Địa chỉ cột 4
         }
         //Tìm kiếm
         search_bar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -230,6 +238,13 @@ public class CustomerMainSearch extends AppCompatActivity {
                 includeCustomerOptions.setVisibility(View.VISIBLE);
                 //Ẩn trang chủ
                 customerMain.setVisibility(View.GONE);
+            }
+        });
+        //Chuyển đổi ngôn ngữ
+        customerChangeLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeLanguage();
             }
         });
         //Đăng xuất
@@ -355,16 +370,16 @@ public class CustomerMainSearch extends AppCompatActivity {
     public void logoutAlert()
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Đăng xuất.")
-                .setMessage("Bạn có chắc chắn muốn đăng xuất ?")
-                .setPositiveButton("Xác nhận", new DialogInterface.OnClickListener() {
+        builder.setTitle(R.string.sign_out + ".")
+                .setMessage(R.string.signout_confirm_question)
+                .setPositiveButton(R.string.confirm_no_caps, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(context, MainLogin.class); //Chuyển về trang đăng xuất
                         startActivity(intent);
                     }
                 })
-                .setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();
@@ -393,6 +408,12 @@ public class CustomerMainSearch extends AppCompatActivity {
         }
         return result;
     }
+
+    public void changeLanguage()
+    {
+        DialogFragment langFrag = FragmentLanguage.newInstance();
+        langFrag.show(getSupportFragmentManager(), "tag");
+    }
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu){ // Inflate menu
 //        MenuInflater inflater = getMenuInflater();
@@ -416,11 +437,11 @@ public class CustomerMainSearch extends AppCompatActivity {
 //        }
 //    }
 //
-//    @Override
-//    protected void attachBaseContext(Context base) {
-//        super.attachBaseContext(LocaleHelper.onAttach(base));
-//    }
-
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
+    }
+//
 //    public void languageSelect(String lang)
 //    {
 //        Locale locale = new Locale(lang); //Chọn locale theo biến lang
@@ -428,7 +449,7 @@ public class CustomerMainSearch extends AppCompatActivity {
 //        config.locale = locale; //Set locale cho activity
 //        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
 //        //Cập nhật ngôn ngữ đã chọn ở trên
-//        Intent intent = new Intent(TrangChuChuaTimKiem.this, TrangChuChuaTimKiem.class); // Khởi động lại activity
+//        Intent intent = new Intent(this, CustomerMainSearch.class); // Khởi động lại activity
 //        startActivity(intent);
 //    }
 }

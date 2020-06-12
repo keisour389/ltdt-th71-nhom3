@@ -26,6 +26,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class GetOrderActivity extends AppCompatActivity {
+
     Context context = this;
     //Các biến dùng chung
     TextView orderStatus;
@@ -83,21 +84,34 @@ public class GetOrderActivity extends AppCompatActivity {
     //Hàm kiểm tra trạng thái của button
     private void checkButtonStatus(String text)
     {
-        switch (text)
+//        switch (text)
+//        {
+//            case "Nhận hàng":
+//                changeButtonStatus("Đã nhận", "#0731db");
+//                togglePhoneNumber(20, View.VISIBLE);
+//                break;
+//            case "Đã nhận":
+//                changeButtonStatus("Hoàn thành", "#05f709");
+//                break;
+//            case "Hoàn thành":
+//                buttonGet.setVisibility(View.INVISIBLE); //Ẩn button đi
+//                break;
+//        }
+        //Dùng if else để có thể dùng string resources
+        if (text.equals(getString(R.string.take_order)))
         {
-            case "Nhận hàng":
-                changeButtonStatus("Đã nhận", "#0731db");
-                togglePhoneNumber(20, View.VISIBLE);
-                break;
-            case "Đã nhận":
-                changeButtonStatus("Hoàn thành", "#05f709");
-                break;
-            case "Hoàn thành":
-                buttonGet.setVisibility(View.INVISIBLE); //Ẩn button đi
-                break;
+            changeButtonStatus(getString(R.string.order_taken), "#0731db");
+            togglePhoneNumber(20, View.VISIBLE);
         }
-
-
+        else if (text.equals(getString(R.string.order_taken)))
+        {
+            changeButtonStatus(getString(R.string.order_completed), "#0731db");
+            togglePhoneNumber(20, View.VISIBLE);
+        }
+        else if (text.equals(getString(R.string.order_completed)))
+        {
+            buttonGet.setVisibility(View.INVISIBLE); //Ẩn button đi
+        }
     }
     //Thay đổi trạng thái button
     private void changeButtonStatus(String text, String color)

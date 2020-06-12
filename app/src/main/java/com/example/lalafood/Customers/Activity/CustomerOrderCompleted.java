@@ -37,7 +37,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CustomerOrderCompleted extends AppCompatActivity {
     //Các biến xử lí
-    private String orderStatus = "Nhận hàng"; //mặc định
+    private String orderStatus = getString(R.string.take_order); //mặc định
     //Test
     private ArrayList<String> foodName = new ArrayList<>();
     private ArrayList<Integer> foodAmount = new ArrayList<>();
@@ -64,7 +64,6 @@ public class CustomerOrderCompleted extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.customer_order_complete_menu, menu);
         return super.onCreateOptionsMenu(menu);
-
     }
 
     @Override
@@ -110,7 +109,7 @@ public class CustomerOrderCompleted extends AppCompatActivity {
         orderId = intent.getIntExtra(RestaurantsDishes.ORDER_ID, 0);
         getOrderById(orderId);
         //Gán mã đơn hàng vào label
-        customerOrderIdLabel.setText("Mã đơn: #" + String.valueOf(orderId));
+        customerOrderIdLabel.setText(R.string.order_id_num + String.valueOf(orderId));
         //Xử lí tình trạng đơn hàng
         Log.d("orderId", String.valueOf(orderId));
         //Get order details
@@ -134,38 +133,67 @@ public class CustomerOrderCompleted extends AppCompatActivity {
     //Get and set status customer order
     private void getSetStatusCusOrder(String status)
     {
-        switch (status)
+//        switch (status)
+//        {
+//            case "Nhận hàng":
+//                customerOrderChecking.setTextColor(Color.parseColor("#000000"));
+//                customerOrderPrepare.setTextColor(Color.parseColor("#a7aba6"));
+//                customerOrderShipping.setTextColor(Color.parseColor("#a7aba6"));
+//                customerOrderCompleted.setTextColor(Color.parseColor("#a7aba6"));
+//                break;
+//            case "Đã nhận":
+//                customerOrderChecking.setTextColor(Color.parseColor("#a7aba6"));
+//                customerOrderPrepare.setTextColor(Color.parseColor("#000000"));
+//                customerOrderShipping.setTextColor(Color.parseColor("#a7aba6"));
+//                customerOrderCompleted.setTextColor(Color.parseColor("#a7aba6"));
+//                break;
+//            case "Đang giao":
+//                customerOrderChecking.setTextColor(Color.parseColor("#a7aba6"));
+//                customerOrderPrepare.setTextColor(Color.parseColor("#a7aba6"));
+//                customerOrderShipping.setTextColor(Color.parseColor("#000000"));
+//                customerOrderCompleted.setTextColor(Color.parseColor("#a7aba6"));
+//                break;
+//            case "Hoàn thành":
+//                customerOrderChecking.setTextColor(Color.parseColor("#a7aba6"));
+//                customerOrderPrepare.setTextColor(Color.parseColor("#a7aba6"));
+//                customerOrderShipping.setTextColor(Color.parseColor("#a7aba6"));
+//                customerOrderCompleted.setTextColor(Color.parseColor("#000000"));
+//                break;
+//        }
+        //Dùng if else để có thể dùng string resources
+        if(status.equals(getString(R.string.take_order)))
         {
-            case "Nhận hàng":
-                customerOrderChecking.setTextColor(Color.parseColor("#000000"));
-                customerOrderPrepare.setTextColor(Color.parseColor("#a7aba6"));
-                customerOrderShipping.setTextColor(Color.parseColor("#a7aba6"));
-                customerOrderCompleted.setTextColor(Color.parseColor("#a7aba6"));
-                break;
-            case "Đã nhận":
-                customerOrderChecking.setTextColor(Color.parseColor("#a7aba6"));
-                customerOrderPrepare.setTextColor(Color.parseColor("#000000"));
-                customerOrderShipping.setTextColor(Color.parseColor("#a7aba6"));
-                customerOrderCompleted.setTextColor(Color.parseColor("#a7aba6"));
-                break;
-            case "Đang giao":
-                customerOrderChecking.setTextColor(Color.parseColor("#a7aba6"));
-                customerOrderPrepare.setTextColor(Color.parseColor("#a7aba6"));
-                customerOrderShipping.setTextColor(Color.parseColor("#000000"));
-                customerOrderCompleted.setTextColor(Color.parseColor("#a7aba6"));
-                break;
-            case "Hoàn thành":
-                customerOrderChecking.setTextColor(Color.parseColor("#a7aba6"));
-                customerOrderPrepare.setTextColor(Color.parseColor("#a7aba6"));
-                customerOrderShipping.setTextColor(Color.parseColor("#a7aba6"));
-                customerOrderCompleted.setTextColor(Color.parseColor("#000000"));
-                break;
+            customerOrderChecking.setTextColor(Color.parseColor("#000000"));
+            customerOrderPrepare.setTextColor(Color.parseColor("#a7aba6"));
+            customerOrderShipping.setTextColor(Color.parseColor("#a7aba6"));
+            customerOrderCompleted.setTextColor(Color.parseColor("#a7aba6"));
+        }
+        else if (status.equals(getString(R.string.order_taken)))
+        {
+            customerOrderChecking.setTextColor(Color.parseColor("#a7aba6"));
+            customerOrderPrepare.setTextColor(Color.parseColor("#000000"));
+            customerOrderShipping.setTextColor(Color.parseColor("#a7aba6"));
+            customerOrderCompleted.setTextColor(Color.parseColor("#a7aba6"));
+        }
+        else if (status.equals(getString(R.string.order_on_the_way)))
+        {
+            customerOrderChecking.setTextColor(Color.parseColor("#a7aba6"));
+            customerOrderPrepare.setTextColor(Color.parseColor("#a7aba6"));
+            customerOrderShipping.setTextColor(Color.parseColor("#000000"));
+            customerOrderCompleted.setTextColor(Color.parseColor("#a7aba6"));
+        }
+        else if (status.equals(getString(R.string.order_completed)))
+        {
+            customerOrderChecking.setTextColor(Color.parseColor("#a7aba6"));
+            customerOrderPrepare.setTextColor(Color.parseColor("#a7aba6"));
+            customerOrderShipping.setTextColor(Color.parseColor("#a7aba6"));
+            customerOrderCompleted.setTextColor(Color.parseColor("#000000"));
         }
     }
     //Check pick up or not
     private void orderIsPickUp()
     {
-        if(orderStatus.equals("Nhận hàng")) //Trường hợp chưa response
+        if(orderStatus.equals(getString(R.string.order_taken))) //Trường hợp chưa response
         {
             shipperInfoInCusOrder.setVisibility(View.GONE);
             searchShipperLabel.setVisibility(View.GONE);
@@ -206,11 +234,11 @@ public class CustomerOrderCompleted extends AppCompatActivity {
                 //Phần xử lí result khi lấy được
                 orderStatus = orderSearchByID[0].getStatus(); //Trạng thái
                 addressInCustomerOrder.setText(orderSearchByID[0].getShipAddress()); //Địa chỉ nhận hàng
-                shippingCostInCusOrder.setText("Phí giao hàng: " +
+                shippingCostInCusOrder.setText(R.string.shipping_fee +
                         String.valueOf(orderSearchByID[0].getShippingCost())); //Phí ship
                 //Cộng thêm phí ship vào phần tổng
                 // Set total
-                totalPriceInCusOrder.setText("Tổng cộng: " + String.valueOf(totalPrice + orderSearchByID[0].getShippingCost()));
+                totalPriceInCusOrder.setText(R.string.total + String.valueOf(totalPrice + orderSearchByID[0].getShippingCost()));
                 noteInCustomerOrder.setText(orderSearchByID[0].getNote()); //Ghi chú
                 orderIsPickUp(); //Kiểm tra trạng thái tài xế nhận hay chưa
                 getSetStatusCusOrder(orderStatus);

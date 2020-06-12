@@ -125,61 +125,107 @@ public class FragmentGetOrder extends Fragment {
     //Lấy trạng thái button hiện tại
     private void getOrderStatus(String text)
     {
-        switch (text)
+//        switch (text)
+//        {
+//            case "Đã nhận":
+//                //Change Button
+//                changeStatusButtonAndLabel("Đã nhận", "#0731db", "Đã nhận", "#0731db");
+//                togglePhoneNumber(20, View.VISIBLE);
+//                break;
+//            case "Đang giao":
+//                //Change Button
+//                changeStatusButtonAndLabel("Hoàn thành", "#05f709",  "Đang giao", "#05f709");
+//                togglePhoneNumber(20, View.VISIBLE);
+//                break;
+//            case "Hoàn thành":
+//                //Change Button
+//                buttonGet.setVisibility(View.GONE); //Khi button mất đi thì đơn hàng sẽ được full screen
+//                changeStatusButtonAndLabel("Hoàn thành", "#cfcbca", "Hoàn thành", "#cfcbca"); //Chủ yếu là thay đổi label
+//                togglePhoneNumber(0, View.INVISIBLE);
+//                break;
+//        }
+        if(text.equals(getString(R.string.order_taken)))
         {
-            case "Đã nhận":
-                //Change Button
-                changeStatusButtonAndLabel("Đã nhận", "#0731db", "Đã nhận", "#0731db");
-                togglePhoneNumber(20, View.VISIBLE);
-                break;
-            case "Đang giao":
-                //Change Button
-                changeStatusButtonAndLabel("Hoàn thành", "#05f709",  "Đang giao", "#05f709");
-                togglePhoneNumber(20, View.VISIBLE);
-                break;
-            case "Hoàn thành":
-                //Change Button
-                buttonGet.setVisibility(View.GONE); //Khi button mất đi thì đơn hàng sẽ được full screen
-                changeStatusButtonAndLabel("Hoàn thành", "#cfcbca", "Hoàn thành", "#cfcbca"); //Chủ yếu là thay đổi label
-                togglePhoneNumber(0, View.INVISIBLE);
-                break;
+            //Change Button
+            changeStatusButtonAndLabel(getString(R.string.order_taken), "#0731db", getString(R.string.order_taken), "#0731db");
+            togglePhoneNumber(20, View.VISIBLE);
+        }
+        else if(text.equals(getString(R.string.order_taken)))
+        {
+            //Change Button
+            changeStatusButtonAndLabel(getString(R.string.order_completed), "#05f709",  getString(R.string.order_on_the_way), "#05f709");
+            togglePhoneNumber(20, View.VISIBLE);
+        }
+        else if(text.equals(getString(R.string.order_taken)))
+        {
+            //Change Button
+            buttonGet.setVisibility(View.GONE); //Khi button mất đi thì đơn hàng sẽ được full screen
+            changeStatusButtonAndLabel(getString(R.string.order_completed), "#cfcbca", getString(R.string.order_completed), "#cfcbca"); //Chủ yếu là thay đổi label
+            togglePhoneNumber(0, View.INVISIBLE);
         }
     }
     //Thay đổi trạng thái trong DL lẫn button
     private void changeOrderStatus(String account, String status, Orders order)
     {
-        switch (status)
+//        switch (status)
+//        {
+//            //Phải toggle hết SĐT, nếu không load từ giai đoạn 2 -> 3 không hiện
+//            case "Nhận hàng":
+//                //Update Status Ordered
+//                order.setShipperId(account);
+//                order.setStatus("Đã nhận");
+//                updateOrder(order);
+//                //Change Button
+//                changeStatusButtonAndLabel("Đã nhận", "#0731db", "Đã nhận", "#0731db");
+//                togglePhoneNumber(20, View.VISIBLE);
+//                break;
+//            case "Đã nhận":
+//                //Update Status Complete
+//                order.setStatus("Đang giao");
+//                updateOrder(order);
+//                //Change Button
+//                togglePhoneNumber(20, View.VISIBLE);
+//                changeStatusButtonAndLabel("Hoàn thành", "#05f709",  "Đang giao", "#05f709");
+//                break;
+//            case "Đang giao":
+//                //Update Status Completed
+//                order.setStatus("Hoàn thành");
+//                updateOrder(order);
+//                //Thay đổi label và button sau khi hoàn thành
+//                changeStatusButtonAndLabel("Hoàn thành", "#cfcbca", "Hoàn thành", "#cfcbca"); //Chủ yếu là thay đổi label
+//                buttonGet.setVisibility(View.GONE); //Khi button mất đi thì đơn hàng sẽ được full screen
+//                togglePhoneNumber(0, View.INVISIBLE);
+//                break;
+//        }
+        if (status.equals(getString(R.string.take_order)))
         {
-            //Phải toggle hết SĐT, nếu không load từ giai đoạn 2 -> 3 không hiện
-            case "Nhận hàng":
-                //Update Status Ordered
-                order.setShipperId(account);
-                order.setStatus("Đã nhận");
-                updateOrder(order);
-                //Change Button
-                changeStatusButtonAndLabel("Đã nhận", "#0731db", "Đã nhận", "#0731db");
-                togglePhoneNumber(20, View.VISIBLE);
-                break;
-            case "Đã nhận":
-                //Update Status Complete
-                order.setStatus("Đang giao");
-                updateOrder(order);
-                //Change Button
-                togglePhoneNumber(20, View.VISIBLE);
-                changeStatusButtonAndLabel("Hoàn thành", "#05f709",  "Đang giao", "#05f709");
-                break;
-            case "Đang giao":
-                //Update Status Completed
-                order.setStatus("Hoàn thành");
-                updateOrder(order);
-                //Thay đổi label và button sau khi hoàn thành
-                changeStatusButtonAndLabel("Hoàn thành", "#cfcbca", "Hoàn thành", "#cfcbca"); //Chủ yếu là thay đổi label
-                buttonGet.setVisibility(View.GONE); //Khi button mất đi thì đơn hàng sẽ được full screen
-                togglePhoneNumber(0, View.INVISIBLE);
-                break;
+            //Update Status Ordered
+            order.setShipperId(account);
+            order.setStatus(getString(R.string.order_taken));
+            updateOrder(order);
+            //Change Button
+            changeStatusButtonAndLabel(getString(R.string.order_taken), "#0731db", getString(R.string.order_taken), "#0731db");
+            togglePhoneNumber(20, View.VISIBLE);
         }
-
-
+        else if (status.equals(getString(R.string.take_order)))
+        {
+            //Update Status Complete
+            order.setStatus(getString(R.string.order_on_the_way));
+            updateOrder(order);
+            //Change Button
+            togglePhoneNumber(20, View.VISIBLE);
+            changeStatusButtonAndLabel(getString(R.string.order_completed), "#05f709",  getString(R.string.order_on_the_way), "#05f709");
+        }
+        else if (status.equals(getString(R.string.take_order)))
+        {
+            //Update Status Completed
+            order.setStatus(getString(R.string.order_completed));
+            updateOrder(order);
+            //Thay đổi label và button sau khi hoàn thành
+            changeStatusButtonAndLabel(getString(R.string.order_completed), "#cfcbca", getString(R.string.order_completed), "#cfcbca"); //Chủ yếu là thay đổi label
+            buttonGet.setVisibility(View.GONE); //Khi button mất đi thì đơn hàng sẽ được full screen
+            togglePhoneNumber(0, View.INVISIBLE);
+        }
     }
     //Thay đổi chữ và màu sắc button
     private void changeStatusButtonAndLabel(String buttonText, String buttonColor, String labelText, String labelColor)

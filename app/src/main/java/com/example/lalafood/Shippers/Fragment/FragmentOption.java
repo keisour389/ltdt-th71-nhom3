@@ -14,14 +14,17 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import com.example.lalafood.API.OrdersFoodAPI;
 import com.example.lalafood.API.Req.Users;
 import com.example.lalafood.API.Req.UsersData;
+import com.example.lalafood.FragmentLanguage;
 import com.example.lalafood.R;
 import com.example.lalafood.SQLite.DatabaseContext;
 import com.example.lalafood.Login.Activity.MainLogin;
+import com.example.lalafood.Shippers.Activity.ShippersMainActivity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -39,6 +42,7 @@ public class FragmentOption extends Fragment {
     TextView userName;
     TextView name;
     TextView createdDate;
+    Button changeLanguage;
     Button logout;
     //Intent
     private String account;
@@ -53,9 +57,17 @@ public class FragmentOption extends Fragment {
         userName = (TextView) view.findViewById(R.id.account);
         name = (TextView) view.findViewById(R.id.name);
         createdDate = (TextView) view.findViewById(R.id.createdDate);
+        changeLanguage = (Button) view.findViewById(R.id.changeLanguagesLable);
         logout = (Button) view.findViewById(R.id.logout);
         //Khởi tạo thông tin cá nhân
         getShipperByAccount(account);
+        //Đổi ngôn ngữ
+        changeLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((ShippersMainActivity)getActivity()).changeLanguage();
+            }
+        });
         //Đăng xuất
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,20 +121,21 @@ public class FragmentOption extends Fragment {
             }
         });
     }
+
     //Tạo thông báo khi đăng xuất
     public void logoutAlert()
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Đăng xuất.")
-                .setMessage("Bạn có chắc chắn muốn đăng xuất ?")
-                .setPositiveButton("Xác nhận", new DialogInterface.OnClickListener() {
+        builder.setTitle(getString(R.string.sign_out))
+                .setMessage(R.string.signout_confirm_question)
+                .setPositiveButton(getString(R.string.confirm_no_caps), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(getContext(), MainLogin.class); //Chuyển về trang đăng xuất
                         startActivity(intent);
                     }
                 })
-                .setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
+                .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.cancel();
@@ -148,4 +161,6 @@ public class FragmentOption extends Fragment {
         }
         return result;
     }
+
+
 }

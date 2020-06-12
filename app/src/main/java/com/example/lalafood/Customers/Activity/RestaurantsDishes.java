@@ -247,9 +247,9 @@ public class RestaurantsDishes extends AppCompatActivity {
                 //Khởi tạo đối tượng
                 Orders orders = new Orders();
                 //Các đối tượng hệ thống gán
-                orders.setName("Đơn hàng LaLaFood");
+                orders.setName(getString(R.string.lalafood_order));
                 orders.setCreatedDate(now);
-                orders.setStatus("Nhận hàng");
+                orders.setStatus(getString(R.string.take_order));
                 orders.setCustomerId("NULL");//Test
                 orders.setShipperId("NULL");
                 orders.setAdminId("NULL");
@@ -322,9 +322,9 @@ public class RestaurantsDishes extends AppCompatActivity {
                         if(dataSqlite.getCount() == 0) //Nếu chưa đăng nhập
                         {
                             AlertDialog.Builder builder = new AlertDialog.Builder(contextActivity);
-                            builder.setTitle("Bạn chưa đăng nhập")
-                                    .setMessage("Đăng nhập hoặc đăng kí ngay nào !!!")
-                                    .setPositiveButton("Đăng kí", new DialogInterface.OnClickListener() {
+                            builder.setTitle(R.string.not_signin)
+                                    .setMessage(R.string.sign_in_or_sign_up)
+                                    .setPositiveButton(R.string.sign_up, new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             Intent intent = new Intent(context, CreatePhoneNumber.class);
@@ -332,7 +332,7 @@ public class RestaurantsDishes extends AppCompatActivity {
                                             startActivity(intent);
                                         }
                                     })
-                                    .setNegativeButton("Đăng nhập", new DialogInterface.OnClickListener() {
+                                    .setNegativeButton(R.string.sign_in, new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             Intent intent = new Intent(context, LoginPhoneNumber.class);
@@ -340,7 +340,7 @@ public class RestaurantsDishes extends AppCompatActivity {
                                             startActivity(intent);
                                         }
                                     })
-                                    .setNeutralButton("Lúc khác", new DialogInterface.OnClickListener() {
+                                    .setNeutralButton(R.string.later, new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             dialog.cancel();
@@ -450,9 +450,9 @@ public class RestaurantsDishes extends AppCompatActivity {
                         if(dataSqlite.getCount() == 0) //Nếu chưa đăng nhập
                         {
                             AlertDialog.Builder builder = new AlertDialog.Builder(contextActivity);
-                            builder.setTitle("Bạn chưa đăng nhập")
-                                    .setMessage("Đăng nhập hoặc đăng kí ngay nào !!!")
-                                    .setPositiveButton("Đăng kí", new DialogInterface.OnClickListener() {
+                            builder.setTitle(R.string.not_signin)
+                                    .setMessage(R.string.sign_in_or_sign_up)
+                                    .setPositiveButton(R.string.sign_up, new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             Intent intent = new Intent(context, CreatePhoneNumber.class);
@@ -460,7 +460,7 @@ public class RestaurantsDishes extends AppCompatActivity {
                                             startActivity(intent);
                                         }
                                     })
-                                    .setNegativeButton("Đăng nhập", new DialogInterface.OnClickListener() {
+                                    .setNegativeButton(R.string.sign_in, new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             Intent intent = new Intent(context, LoginPhoneNumber.class);
@@ -468,7 +468,7 @@ public class RestaurantsDishes extends AppCompatActivity {
                                             startActivity(intent);
                                         }
                                     })
-                                    .setNeutralButton("Lúc khác", new DialogInterface.OnClickListener() {
+                                    .setNeutralButton(R.string.later, new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             dialog.cancel();

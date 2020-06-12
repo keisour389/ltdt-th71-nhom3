@@ -1,0 +1,69 @@
+package com.example.lalafood;
+
+
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import com.example.lalafood.Helper.LocaleHelper;
+
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class FragmentLanguage extends DialogFragment {
+    private Button langEng;
+    private Button langViet;
+
+    public static FragmentLanguage newInstance(){
+        return new FragmentLanguage();
+    }
+
+    public void Restart(Context ctx)
+    {
+        //geting activty from context
+        Activity a = (Activity)ctx;
+        //forcing activity to recreate
+        a.recreate();
+    }
+
+    private void closeFragment(){
+        getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
+    }
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+         //Inflate the layout for this fragment
+        View languageFrag =  inflater.inflate(R.layout.fragment_language, container, false);
+        langEng = languageFrag.findViewById(R.id.lang_eng);
+        langViet = languageFrag.findViewById(R.id.lang_viet);
+//        LocaleHelper.onAttach(getActivity());
+        langEng.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LocaleHelper.setLocale(getActivity(), "en" );
+                Restart(getActivity());
+                closeFragment();
+            }
+        });
+
+        langViet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LocaleHelper.setLocale(getActivity(), "vi" );
+                Restart(getActivity());
+                closeFragment();
+            }
+        });
+        return languageFrag;
+    }
+}

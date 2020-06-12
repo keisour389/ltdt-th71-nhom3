@@ -45,7 +45,7 @@ public class FragmentOrders extends Fragment {
     //
     private String account;
     //Intent
-    public String orderStatus = "Đã nhận"; //Mặc định
+    public String orderStatus = String.valueOf(R.string.order_taken); //Mặc định
     public View view;
     //Các biến dùng chung
     OrdersAdapter ordersAdapter;
@@ -54,10 +54,11 @@ public class FragmentOrders extends Fragment {
     Spinner fillerOrders;
     TextView ordersTypeLabel;
     //Các biến gửi đi
-    private String textTitle = "Đã nhận"; //Mặc định
+    private String textTitle = String.valueOf(R.string.order_taken); //Mặc định
     private String textTitleColor = "#0731db"; //Mặc định
     //Spinner
-    private static final String[] paths = {"Đã nhận", "Đang giao", "Đã hủy", "Hoàn thành"};
+    private final String[] paths = {String.valueOf(R.string.order_taken), String.valueOf(R.string.order_on_the_way),
+            String.valueOf(R.string.order_canceled), String.valueOf(R.string.order_completed)};
 
     public FragmentOrders()
     {}
@@ -100,42 +101,43 @@ public class FragmentOrders extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 //Set text cứng
-                ((TextView)view).setText("Lọc");
+//                ((TextView)view).setText("Lọc");
+                ((TextView)view).setText(String.valueOf(R.string.filter));
                 switch (position) {
                     case 0: //Đã nhận
                         //Các biến dùng để truyền
-                        orderStatus = "Đã nhận";
-                        textTitle = "Đã nhận";
+                        orderStatus = String.valueOf(R.string.order_taken);
+                        textTitle = String.valueOf(R.string.order_taken);
                         textTitleColor = "#0731db";
                         //Các biến dùng để gán
-                        ordersTypeLabel.setText("Loại đơn hàng: " + orderStatus);
+                        ordersTypeLabel.setText(R.string.order_type + orderStatus);
                         getOrdersByStatus(account, orderStatus);
                         break;
                     case 1:
                         //Các biến dùng để truyền
-                        orderStatus = "Đang giao";
-                        textTitle = "Đang giao";
+                        orderStatus = String.valueOf(R.string.order_on_the_way);
+                        textTitle = String.valueOf(R.string.order_on_the_way);
                         textTitleColor = "#05f709";
                         //Các biến dùng để gán
-                        ordersTypeLabel.setText("Loại đơn hàng: " + orderStatus);
+                        ordersTypeLabel.setText(R.string.order_type + orderStatus);
                         getOrdersByStatus(account, orderStatus);
                         break;
                     case 2:
                         //Các biến dùng để truyền
-                        orderStatus = "Đã hủy";
-                        textTitle = "Đã hủy";
+                        orderStatus = String.valueOf(R.string.order_canceled);
+                        textTitle = String.valueOf(R.string.order_canceled);
                         textTitleColor = "#fa3605";
                         //Các biến dùng để gán
-                        ordersTypeLabel.setText("Loại đơn hàng: " + orderStatus);
+                        ordersTypeLabel.setText(R.string.order_type + orderStatus);
                         getOrdersByStatus(account, orderStatus);
                         break;
                     case 3:
                         //Các biến dùng để truyền
-                        orderStatus = "Hoàn thành";
-                        textTitle = "Hoàn thành";
+                        orderStatus = String.valueOf(R.string.order_completed);;
+                        textTitle = String.valueOf(R.string.order_completed);
                         textTitleColor = "#cfcbca";
                         //Các biến dùng để gán
-                        ordersTypeLabel.setText("Loại đơn hàng: " + orderStatus);
+                        ordersTypeLabel.setText(R.string.order_type + orderStatus);
                         getOrdersByStatus(account, orderStatus);
                         break;
                 }
@@ -213,8 +215,8 @@ public class FragmentOrders extends Fragment {
             @Override
             public void onFailure(Call<OrdersData> call, Throwable t) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("Thông báo.")
-                        .setMessage("KHÔNG CÓ INTERNET")
+                builder.setTitle(getString(R.string.notice))
+                        .setMessage(getString(R.string.no_internet))
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

@@ -2,6 +2,7 @@ package com.example.lalafood.Shippers.Activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
@@ -12,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.example.lalafood.FragmentLanguage;
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.Shippers.Adapter.OrdersFragmentAdapter;
 import com.example.lalafood.Shippers.Fragment.FragmentGetOrder;
 import com.example.lalafood.Shippers.Fragment.FragmentOption;
@@ -29,7 +32,7 @@ public class ShippersMainActivity extends AppCompatActivity {
     public static final String ACCOUNT = "ACCOUNT";
     public static final String RESET_ORDER_ADAPTER = "RESET_ORDER_ADAPTER";
     //Intent
-    private String orderStatus = "Đã nhận";
+    private String orderStatus = String.valueOf(R.string.order_taken);
 
     //Các biến dùng chung
     TabLayout tabOrders;
@@ -64,7 +67,7 @@ public class ShippersMainActivity extends AppCompatActivity {
 
         //
         actionBar = getSupportActionBar();
-        actionBar.setTitle("Nhận hàng"); //7 tab
+        actionBar.setTitle(getString(R.string.take_order)); //7 tab
 //        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 //        getSupportActionBar().setCustomView(R.layout.test_layout);
         viewPagerOrders.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -82,16 +85,16 @@ public class ShippersMainActivity extends AppCompatActivity {
                 {
                     case 0:
                         setVisibleMenu(menu, false);
-                        actionBar.setTitle("Nhận hàng"); //7 tab
+                        actionBar.setTitle(getString(R.string.take_order)); //7 tab
                         break;
                     case 1:
                         //Tạo menu
                         setVisibleMenu(menu, true);
-                        actionBar.setTitle("Đơn hàng"); //7 tab
+                        actionBar.setTitle(getString(R.string.order)); //7 tab
                         break;
                     case 2:
                         setVisibleMenu(menu, false);
-                        actionBar.setTitle("Cài đặt"); //8 tab
+                        actionBar.setTitle(getString(R.string.option)); //8 tab
                         break;
                 }
             }
@@ -144,9 +147,9 @@ public class ShippersMainActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
 
             ordersFragmentAdapter = new OrdersFragmentAdapter(getSupportFragmentManager());
-            ordersFragmentAdapter.addFragment(new FragmentGetOrder(), "Nhận hàng");
-            ordersFragmentAdapter.addFragment(new FragmentOrders(), "Đơn hàng");
-            ordersFragmentAdapter.addFragment(new FragmentOption(), "Cài đặt");
+            ordersFragmentAdapter.addFragment(new FragmentGetOrder(), getString(R.string.take_order));
+            ordersFragmentAdapter.addFragment(new FragmentOrders(), getString(R.string.order));
+            ordersFragmentAdapter.addFragment(new FragmentOption(), getString(R.string.option));
             viewPagerOrders.setAdapter(ordersFragmentAdapter);
             tabOrders.setupWithViewPager(viewPagerOrders);
 
@@ -156,9 +159,9 @@ public class ShippersMainActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
 
             ordersFragmentAdapter = new OrdersFragmentAdapter(getSupportFragmentManager());
-            ordersFragmentAdapter.addFragment(new FragmentPickUp(), "Nhận hàng");
-            ordersFragmentAdapter.addFragment(new FragmentGetOrder(), "Đơn hàng");
-            ordersFragmentAdapter.addFragment(new FragmentOption(), "Cài đặt");
+            ordersFragmentAdapter.addFragment(new FragmentPickUp(), getString(R.string.take_order));
+            ordersFragmentAdapter.addFragment(new FragmentGetOrder(), getString(R.string.order));
+            ordersFragmentAdapter.addFragment(new FragmentOption(), getString(R.string.option));
             viewPagerOrders.setAdapter(ordersFragmentAdapter);
             viewPagerOrders.setCurrentItem(1); //Nhảy đến vị trí xem đơn hàng
             tabOrders.setupWithViewPager(viewPagerOrders);
@@ -168,9 +171,9 @@ public class ShippersMainActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(false); //Nếu là trang chủ thì không có nút quay lại
 
             ordersFragmentAdapter = new OrdersFragmentAdapter(getSupportFragmentManager());
-            ordersFragmentAdapter.addFragment(new FragmentPickUp(), "Nhận hàng");
-            ordersFragmentAdapter.addFragment(new FragmentOrders(), "Đơn hàng");
-            ordersFragmentAdapter.addFragment(new FragmentOption(), "Cài đặt");
+            ordersFragmentAdapter.addFragment(new FragmentPickUp(), getString(R.string.take_order));
+            ordersFragmentAdapter.addFragment(new FragmentOrders(), getString(R.string.order));
+            ordersFragmentAdapter.addFragment(new FragmentOption(), getString(R.string.option));
             viewPagerOrders.setAdapter(ordersFragmentAdapter);
             tabOrders.setupWithViewPager(viewPagerOrders);
         }
@@ -199,4 +202,15 @@ public class ShippersMainActivity extends AppCompatActivity {
         }
     }
 
+    //Đổi ngôn ngữ
+    public void changeLanguage()
+    {
+        DialogFragment langFrag = FragmentLanguage.newInstance();
+        langFrag.show(getSupportFragmentManager(), "tag");
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
+    }
 }

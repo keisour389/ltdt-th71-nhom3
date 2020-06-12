@@ -80,7 +80,7 @@ public class OrdersAdapter extends ArrayAdapter<String> {
         titleOrders.setText(textTitle);
         titleOrders.setBackgroundColor(Color.parseColor(textTitleColor)); //Parse color
         //Set body
-        oId.setText("Mã đơn hàng: " + orderId.get(position).toString()); //toString vì id là số
+        oId.setText(R.string.order_id + ": " + orderId.get(position).toString()); //toString vì id là số
         pAddress.setText("Nhận hàng: " + pickUpAddress.get(position));
         sAddress.setText("Giao hàng: " + shipAddress.get(position));
         nOte.setText("Ghi chú: " + note.get(position));

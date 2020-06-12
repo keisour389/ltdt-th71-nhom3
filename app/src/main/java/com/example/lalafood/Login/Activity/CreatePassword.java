@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.lalafood.R;
 import com.google.android.material.textfield.TextInputEditText;
 
+import static com.example.lalafood.R.string.no_empty_password;
+
 
 public class CreatePassword extends AppCompatActivity {
     //
@@ -64,7 +66,7 @@ public class CreatePassword extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (txtEMatKhauDangKy.getText().toString().isEmpty()) {
-                    txtEMatKhauDangKy.setError("VUI LÒNG KHÔNG ĐỂ TRỐNG !");
+                    txtEMatKhauDangKy.setError(getText(R.string.no_empty_password));
                 }
             }
         });
@@ -74,14 +76,14 @@ public class CreatePassword extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (txtENhapLaiMatKhauDangKy.getText().toString().isEmpty()) {
-                    txtENhapLaiMatKhauDangKy.setError("VUI LÒNG KHÔNG ĐỂ TRỐNG !");
+                    txtENhapLaiMatKhauDangKy.setError(getText(R.string.no_empty_password));
                 }
             }
         });
         //Nút quay lại
         actionBar.setDisplayHomeAsUpEnabled(true);
         //Set title
-        actionBar.setTitle("Tạo tài khoản");
+        actionBar.setTitle(getText(R.string.create_account));
     }
 
     // Kiểm tra 2 ô dữ liệu có rỗng hay 0.
