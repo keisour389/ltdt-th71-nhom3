@@ -185,6 +185,7 @@
     <string name="increase">Tăng</string>
     <string name="status">Tình trạng</string>
     <string name="cancel">Hủy</string>
+    <string name="all_orders">Tất cả đơn hàng</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="red" translatable="false" />
     <string name="blue" translatable="false" />

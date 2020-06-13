@@ -129,4 +129,5 @@
     <string name="order_canceled">Canceled</string>
     <string name="order_type">"Order type: "</string>
     <string name="filter">Filter</string>
+    <string name="all_orders">All orders</string>
 </resources>

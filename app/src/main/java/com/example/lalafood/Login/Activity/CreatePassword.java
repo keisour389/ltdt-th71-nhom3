@@ -11,6 +11,7 @@ import android.widget.Button;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.R;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -113,5 +114,10 @@ public class CreatePassword extends AppCompatActivity {
             this.finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+    //Đổi ngôn ngữ
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

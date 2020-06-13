@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.lalafood.API.OrdersFoodAPI;
 import com.example.lalafood.API.Req.OrdersData;
 import com.example.lalafood.API.Req.Orders;
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -168,5 +169,10 @@ public class GetOrderActivity extends AppCompatActivity {
                 Log.d("Response", "Error");
             }
         });
+    }
+    //Đổi ngôn ngữ
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

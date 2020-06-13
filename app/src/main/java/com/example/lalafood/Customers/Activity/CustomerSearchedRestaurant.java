@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +19,7 @@ import com.example.lalafood.API.OrdersFoodAPI;
 import com.example.lalafood.API.Req.Restaurants;
 import com.example.lalafood.API.Req.RestaurantsData;
 import com.example.lalafood.Customers.Adapter.RestaurantAdapter;
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -204,5 +206,10 @@ public class CustomerSearchedRestaurant extends AppCompatActivity {
                 Log.d("Response", "Error");
             }
         });
+    }
+    //Đổi ngôn ngữ
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

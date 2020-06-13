@@ -21,6 +21,7 @@ import com.example.lalafood.API.OrdersFoodAPI;
 import com.example.lalafood.API.Req.CreateUserData;
 import com.example.lalafood.API.Req.Users;
 import com.example.lalafood.Common.Account;
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
@@ -276,5 +277,10 @@ public class FormCreateAccount extends AppCompatActivity {
             this.finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+    //Đổi ngôn ngữ
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

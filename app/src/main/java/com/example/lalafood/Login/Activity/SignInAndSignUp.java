@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.R;
 
 public class SignInAndSignUp extends AppCompatActivity {
@@ -68,5 +69,10 @@ public class SignInAndSignUp extends AppCompatActivity {
             this.finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+    //Đổi ngôn ngữ
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

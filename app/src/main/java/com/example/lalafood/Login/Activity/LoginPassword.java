@@ -17,6 +17,7 @@ import com.example.lalafood.API.OrdersFoodAPI;
 import com.example.lalafood.API.Req.Users;
 import com.example.lalafood.API.Req.UsersData;
 import com.example.lalafood.Customers.Activity.CustomerMainSearch;
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.R;
 import com.example.lalafood.SQLite.DatabaseContext;
 import com.example.lalafood.Shippers.Activity.ShippersMainActivity;
@@ -261,5 +262,10 @@ public class LoginPassword extends AppCompatActivity {
             Log.d("GetAccount", a);
             i++;
         }
+    }
+    //Đổi ngôn ngữ
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

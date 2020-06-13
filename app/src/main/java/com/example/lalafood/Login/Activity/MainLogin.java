@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.lalafood.Customers.Activity.CustomerMainSearch;
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.R;
 import com.example.lalafood.SQLite.DatabaseContext;
 import com.example.lalafood.Shippers.Activity.ShippersMainActivity;
@@ -93,5 +94,9 @@ public class MainLogin extends AppCompatActivity {
         }
         return result;
     }
-
+    //Đổi ngôn ngữ
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
+    }
 }

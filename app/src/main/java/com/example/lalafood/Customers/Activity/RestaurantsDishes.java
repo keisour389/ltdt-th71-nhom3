@@ -34,6 +34,7 @@ import com.example.lalafood.API.Req.OrderDetailsCreateData;
 import com.example.lalafood.API.Req.Orders;
 import com.example.lalafood.Customers.Adapter.BillCustomerAdapter;
 import com.example.lalafood.Customers.Adapter.FoodAdapter;
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.Login.Activity.CreatePhoneNumber;
 import com.example.lalafood.Login.Activity.LoginPhoneNumber;
 import com.example.lalafood.R;
@@ -696,4 +697,9 @@ public class RestaurantsDishes extends AppCompatActivity {
 //        fragmentTransaction.add(R.id.fragmentGetDish, fragmentGetDish);
 //        fragmentTransaction.commit();
 //    }
+    //Đổi ngôn ngữ
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
+    }
 }

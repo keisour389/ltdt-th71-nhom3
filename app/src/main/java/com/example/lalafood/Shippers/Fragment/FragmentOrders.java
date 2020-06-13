@@ -102,42 +102,42 @@ public class FragmentOrders extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 //Set text cứng
 //                ((TextView)view).setText("Lọc");
-                ((TextView)view).setText(String.valueOf(R.string.filter));
+                ((TextView)view).setText(getText(R.string.filter));
                 switch (position) {
                     case 0: //Đã nhận
                         //Các biến dùng để truyền
-                        orderStatus = String.valueOf(R.string.order_taken);
-                        textTitle = String.valueOf(R.string.order_taken);
+                        orderStatus = (String) getText(R.string.order_taken);
+                        textTitle = (String) getText(R.string.order_taken);
                         textTitleColor = "#0731db";
                         //Các biến dùng để gán
-                        ordersTypeLabel.setText(R.string.order_type + orderStatus);
+                        ordersTypeLabel.setText(getText(R.string.order_type) + orderStatus);
                         getOrdersByStatus(account, orderStatus);
                         break;
                     case 1:
                         //Các biến dùng để truyền
-                        orderStatus = String.valueOf(R.string.order_on_the_way);
-                        textTitle = String.valueOf(R.string.order_on_the_way);
+                        orderStatus = (String) getText(R.string.order_on_the_way);
+                        textTitle = (String) getText(R.string.order_on_the_way);
                         textTitleColor = "#05f709";
                         //Các biến dùng để gán
-                        ordersTypeLabel.setText(R.string.order_type + orderStatus);
+                        ordersTypeLabel.setText(getText(R.string.order_type) + orderStatus);
                         getOrdersByStatus(account, orderStatus);
                         break;
                     case 2:
                         //Các biến dùng để truyền
-                        orderStatus = String.valueOf(R.string.order_canceled);
-                        textTitle = String.valueOf(R.string.order_canceled);
+                        orderStatus = (String) getText(R.string.order_canceled);
+                        textTitle = (String) getText(R.string.order_canceled);
                         textTitleColor = "#fa3605";
                         //Các biến dùng để gán
-                        ordersTypeLabel.setText(R.string.order_type + orderStatus);
+                        ordersTypeLabel.setText(getText(R.string.order_type) + orderStatus);
                         getOrdersByStatus(account, orderStatus);
                         break;
                     case 3:
                         //Các biến dùng để truyền
-                        orderStatus = String.valueOf(R.string.order_completed);;
-                        textTitle = String.valueOf(R.string.order_completed);
+                        orderStatus = (String) getText(R.string.order_completed);;
+                        textTitle = (String) getText(R.string.order_completed);
                         textTitleColor = "#cfcbca";
                         //Các biến dùng để gán
-                        ordersTypeLabel.setText(R.string.order_type + orderStatus);
+                        ordersTypeLabel.setText(getText(R.string.order_type) + orderStatus);
                         getOrdersByStatus(account, orderStatus);
                         break;
                 }

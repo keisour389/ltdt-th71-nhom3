@@ -17,6 +17,7 @@ import com.example.lalafood.API.OrdersFoodAPI;
 import com.example.lalafood.API.Req.Users;
 import com.example.lalafood.API.Req.UsersData;
 import com.example.lalafood.Common.Account;
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -142,5 +143,11 @@ public class LoginPhoneNumber extends AppCompatActivity {
                 Log.d("Response", "Error");
             }
         });
+    }
+
+    //Đổi ngôn ngữ
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

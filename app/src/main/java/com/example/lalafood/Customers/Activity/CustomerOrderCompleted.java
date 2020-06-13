@@ -3,6 +3,7 @@ package com.example.lalafood.Customers.Activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -22,6 +23,7 @@ import com.example.lalafood.API.Req.OrdersData;
 import com.example.lalafood.API.Req.Users;
 import com.example.lalafood.API.Req.UsersData;
 import com.example.lalafood.Customers.Adapter.BillCustomerAdapter;
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.R;
 import com.example.lalafood.SQLite.DatabaseContext;
 import com.google.gson.Gson;
@@ -300,5 +302,10 @@ public class CustomerOrderCompleted extends AppCompatActivity {
             foodName.add(data.getString(4));
             foodPrice.add(data.getInt(5));
         }
+    }
+    //Đổi ngôn ngữ
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

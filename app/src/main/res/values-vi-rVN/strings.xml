@@ -129,4 +129,5 @@
     <string name="order_type">Loại đơn hàng:</string>
     <string name="order_canceled">Đã hủy</string>
     <string name="filter">Lọc</string>
+    <string name="all_orders">Tất cả đơn hàng</string>
 </resources>
