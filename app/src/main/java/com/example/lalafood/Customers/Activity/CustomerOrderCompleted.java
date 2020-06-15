@@ -39,13 +39,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CustomerOrderCompleted extends AppCompatActivity {
     //Các biến xử lí
-    private String orderStatus = getString(R.string.take_order); //mặc định
+//    private String orderStatus = getString(R.string.take_order); //mặc định
+
     //Test
     private ArrayList<String> foodName = new ArrayList<>();
     private ArrayList<Integer> foodAmount = new ArrayList<>();
     private ArrayList<Integer> foodPrice = new ArrayList<>();
     //Các biến dùng chung
     int totalPrice = 0;
+    String orderStatus;
     ListView foodListCustomerOrder;
     TextView customerOrderChecking;
     TextView customerOrderPrepare;
@@ -84,6 +86,7 @@ public class CustomerOrderCompleted extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_order_completed);
         //Ánh xạ
+        orderStatus = getString(R.string.take_order);
         foodListCustomerOrder = (ListView) findViewById(R.id.foodListCustomerOrder);
         customerOrderChecking = (TextView) findViewById(R.id.customerOrderChecking);
         customerOrderPrepare = (TextView) findViewById(R.id.customerOrderPrepare);
@@ -111,7 +114,7 @@ public class CustomerOrderCompleted extends AppCompatActivity {
         orderId = intent.getIntExtra(RestaurantsDishes.ORDER_ID, 0);
         getOrderById(orderId);
         //Gán mã đơn hàng vào label
-        customerOrderIdLabel.setText(R.string.order_id_num + String.valueOf(orderId));
+        customerOrderIdLabel.setText(getText(R.string.order_id_num) + String.valueOf(orderId));
         //Xử lí tình trạng đơn hàng
         Log.d("orderId", String.valueOf(orderId));
         //Get order details
@@ -236,11 +239,10 @@ public class CustomerOrderCompleted extends AppCompatActivity {
                 //Phần xử lí result khi lấy được
                 orderStatus = orderSearchByID[0].getStatus(); //Trạng thái
                 addressInCustomerOrder.setText(orderSearchByID[0].getShipAddress()); //Địa chỉ nhận hàng
-                shippingCostInCusOrder.setText(R.string.shipping_fee +
-                        String.valueOf(orderSearchByID[0].getShippingCost())); //Phí ship
+                shippingCostInCusOrder.setText(String.format("%s%s", getString(R.string.shipping_fee), String.valueOf(orderSearchByID[0].getShippingCost()))); //Phí ship
                 //Cộng thêm phí ship vào phần tổng
                 // Set total
-                totalPriceInCusOrder.setText(R.string.total + String.valueOf(totalPrice + orderSearchByID[0].getShippingCost()));
+                totalPriceInCusOrder.setText(String.format("%s%s", getString(R.string.total), String.valueOf(totalPrice + orderSearchByID[0].getShippingCost())));
                 noteInCustomerOrder.setText(orderSearchByID[0].getNote()); //Ghi chú
                 orderIsPickUp(); //Kiểm tra trạng thái tài xế nhận hay chưa
                 getSetStatusCusOrder(orderStatus);
@@ -303,7 +305,6 @@ public class CustomerOrderCompleted extends AppCompatActivity {
             foodPrice.add(data.getInt(5));
         }
     }
-    //Đổi ngôn ngữ
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(LocaleHelper.onAttach(base));

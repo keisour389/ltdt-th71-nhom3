@@ -19,9 +19,9 @@
             android:text="X"/>
         <LinearLayout
             android:id="@+id/customerLoginIn"
-            android:visibility="gone"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_gravity="center"
             android:orientation="vertical">
             <TextView
@@ -30,7 +30,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="30sp"
                 android:textAlignment="center"
-                android:text="@string/"/>
+                android:text="@string/hello"/>
             <TextView
                 android:id="@+id/customerNameInOptions"
                 android:layout_marginTop="10dp"
@@ -38,11 +38,13 @@
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
                 android:textSize="30sp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
                 android:text="Nguyễn Văn A"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/customerDontLoginIn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical">
@@ -52,6 +54,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="30sp"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:text="@string/not_signin"/>
            <TableLayout
                android:layout_marginTop="10dp"

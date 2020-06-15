@@ -130,4 +130,14 @@
     <string name="order_type">"Order type: "</string>
     <string name="filter">Filter</string>
     <string name="all_orders">All orders</string>
+    <string name="ship_to">Ship to</string>
+    <string name="note">Note</string>
+    <string name="dish_count2">Count</string>
+    <string name="accept_order">Order</string>
+    <string name="go_back">Go Back</string>
+    <string name="note_for_driver">Note for driver</string>
+    <string name="reconfirm_order">Please check your order</string>
+    <string name="your_phone_num">Your phone number</string>
+    <string name="order_will_go_to">Order will be shipped to</string>
+    <string name="bill">Bill</string>
 </resources>

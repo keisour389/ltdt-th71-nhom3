@@ -207,7 +207,6 @@ public class CustomerSearchedRestaurant extends AppCompatActivity {
             }
         });
     }
-    //Đổi ngôn ngữ
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(LocaleHelper.onAttach(base));

@@ -2,7 +2,10 @@ package com.example.lalafood;
 
 
 import android.app.Activity;
+
 import android.content.Context;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +16,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+
+import com.example.lalafood.Customers.Activity.CustomerMainSearch;
 import com.example.lalafood.Helper.LocaleHelper;
+import com.example.lalafood.Login.Activity.MainLogin;
 
 
 /**
@@ -35,6 +41,12 @@ public class FragmentLanguage extends DialogFragment {
         a.recreate();
     }
 
+    public void RestartIntent(Intent intent)
+    {
+        getActivity().finish();
+        startActivity(intent);
+    }
+
     private void closeFragment(){
         getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
     }
@@ -46,12 +58,14 @@ public class FragmentLanguage extends DialogFragment {
         View languageFrag =  inflater.inflate(R.layout.fragment_language, container, false);
         langEng = languageFrag.findViewById(R.id.lang_eng);
         langViet = languageFrag.findViewById(R.id.lang_viet);
-//        LocaleHelper.onAttach(getActivity());
+        LocaleHelper.onAttach(getActivity());
         langEng.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 LocaleHelper.setLocale(getActivity(), "en" );
-                Restart(getActivity());
+//                Restart(getActivity());
+                Intent intent = new Intent(getActivity(), MainLogin.class);//Mở lại trang MainLogin
+                RestartIntent(intent);
                 closeFragment();
             }
         });
@@ -60,7 +74,9 @@ public class FragmentLanguage extends DialogFragment {
             @Override
             public void onClick(View v) {
                 LocaleHelper.setLocale(getActivity(), "vi" );
-                Restart(getActivity());
+//                Restart(getActivity());
+                Intent intent = new Intent(getActivity(), MainLogin.class);//Mở lại trang MainLogin
+                RestartIntent(intent);
                 closeFragment();
             }
         });

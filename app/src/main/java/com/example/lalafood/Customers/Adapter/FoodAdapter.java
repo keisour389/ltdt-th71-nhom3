@@ -41,8 +41,8 @@ public class FoodAdapter extends ArrayAdapter<Integer> {
         TextView foodUnit = (TextView) rowValue.findViewById(R.id.foodUnit);
         //Set text
         fName.setText(String.valueOf(this.foodName.get(position)));
-        foodPrice.setText(R.string.dish_price_ff + String.valueOf(this.foodPrice.get(position)) + "đ");
-        foodUnit.setText(R.string.dish_currency+": " + String.valueOf(this.foodUnit.get(position)));
+        foodPrice.setText(String.format("%s%sđ", getContext().getText(R.string.dish_price_ff), String.valueOf(this.foodPrice.get(position))));
+        foodUnit.setText(String.format("%s: %s", getContext().getText(R.string.dish_currency), String.valueOf(this.foodUnit.get(position))));
         return rowValue;
     }
 }

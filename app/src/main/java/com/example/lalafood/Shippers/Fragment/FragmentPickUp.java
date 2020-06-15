@@ -135,7 +135,7 @@ public class FragmentPickUp extends Fragment {
                 Log.d("index", String.valueOf(index));
                 //Triển khai adapter
                 ordersAdapter = new OrdersAdapter(getActivity(), orderId, pickUpAddress, shipAddress, orderNote,
-                        orderFee, getString(R.string.lalafood_order), "#fa9702");
+                        orderFee, getActivity().getText(R.string.lalafood_order).toString(), "#fa9702");
                 ordersListView.setAdapter(ordersAdapter);
                 //Xử lí switch
                 //Khi con switch thay đổi

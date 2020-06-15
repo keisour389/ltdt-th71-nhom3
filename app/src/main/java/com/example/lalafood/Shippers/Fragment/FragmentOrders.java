@@ -54,7 +54,9 @@ public class FragmentOrders extends Fragment {
     Spinner fillerOrders;
     TextView ordersTypeLabel;
     //Các biến gửi đi
-    private String textTitle = String.valueOf(R.string.order_taken); //Mặc định
+//    private String textTitle = String.valueOf(R.string.order_taken); //Mặc định
+    private String textTitle;
+    private String filter;
     private String textTitleColor = "#0731db"; //Mặc định
     //Spinner
     private final String[] paths = {String.valueOf(R.string.order_taken), String.valueOf(R.string.order_on_the_way),
@@ -76,6 +78,7 @@ public class FragmentOrders extends Fragment {
         orderSwipeLayout = (SwipeRefreshLayout) view.findViewById(R.id.orderSwipeLayout);
         fillerOrders = (Spinner) view.findViewById(R.id.fillerOrders);
         ordersTypeLabel = (TextView) view.findViewById(R.id.ordersTypeLabel);
+        filter = (String) getText(R.string.filter);
         orderSwipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -101,14 +104,14 @@ public class FragmentOrders extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 //Set text cứng
-//                ((TextView)view).setText("Lọc");
-//                try
-//                {
-//                    ((TextView)view).setText(getText(R.string.filter));
-//                }
-//                catch(Exception ex)
-//                {
-//                }
+//                ((TextView)view).setText(filter);
+                try
+                {
+                    ((TextView)view).setText(filter);
+                }
+                catch(Exception ex)
+                {
+                }
                 switch (position) {
                     case 0: //Đã nhận
                         //Các biến dùng để truyền

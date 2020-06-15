@@ -10,6 +10,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -370,8 +371,8 @@ public class CustomerMainSearch extends AppCompatActivity {
     public void logoutAlert()
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(R.string.sign_out + ".")
-                .setMessage(R.string.signout_confirm_question)
+        builder.setTitle(getText(R.string.sign_out) + ".")
+                .setMessage(getText(R.string.signout_confirm_question))
                 .setPositiveButton(R.string.confirm_no_caps, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -436,7 +437,7 @@ public class CustomerMainSearch extends AppCompatActivity {
 //                return super.onOptionsItemSelected(item);
 //        }
 //    }
-//
+
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(LocaleHelper.onAttach(base));
@@ -452,4 +453,5 @@ public class CustomerMainSearch extends AppCompatActivity {
 //        Intent intent = new Intent(this, CustomerMainSearch.class); // Khởi động lại activity
 //        startActivity(intent);
 //    }
+
 }

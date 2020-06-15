@@ -323,7 +323,7 @@ public class RestaurantsDishes extends AppCompatActivity {
                         if(dataSqlite.getCount() == 0) //Nếu chưa đăng nhập
                         {
                             AlertDialog.Builder builder = new AlertDialog.Builder(contextActivity);
-                            builder.setTitle(R.string.not_signin)
+                            builder.setTitle(getText(R.string.not_signin))
                                     .setMessage(R.string.sign_in_or_sign_up)
                                     .setPositiveButton(R.string.sign_up, new DialogInterface.OnClickListener() {
                                         @Override
@@ -451,9 +451,9 @@ public class RestaurantsDishes extends AppCompatActivity {
                         if(dataSqlite.getCount() == 0) //Nếu chưa đăng nhập
                         {
                             AlertDialog.Builder builder = new AlertDialog.Builder(contextActivity);
-                            builder.setTitle(R.string.not_signin)
-                                    .setMessage(R.string.sign_in_or_sign_up)
-                                    .setPositiveButton(R.string.sign_up, new DialogInterface.OnClickListener() {
+                            builder.setTitle(getString(R.string.not_signin))
+                                    .setMessage(getString(R.string.sign_in_or_sign_up))
+                                    .setPositiveButton(getString(R.string.sign_up), new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             Intent intent = new Intent(context, CreatePhoneNumber.class);
@@ -461,7 +461,7 @@ public class RestaurantsDishes extends AppCompatActivity {
                                             startActivity(intent);
                                         }
                                     })
-                                    .setNegativeButton(R.string.sign_in, new DialogInterface.OnClickListener() {
+                                    .setNegativeButton(getString(R.string.sign_in), new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             Intent intent = new Intent(context, LoginPhoneNumber.class);
@@ -469,7 +469,7 @@ public class RestaurantsDishes extends AppCompatActivity {
                                             startActivity(intent);
                                         }
                                     })
-                                    .setNeutralButton(R.string.later, new DialogInterface.OnClickListener() {
+                                    .setNeutralButton(getString(R.string.later), new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             dialog.cancel();
@@ -653,7 +653,6 @@ public class RestaurantsDishes extends AppCompatActivity {
                 listItem.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT));
                 listItem.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
                 totalHeight += listItem.getMeasuredHeight();
-
             }
         }
 
@@ -697,7 +696,6 @@ public class RestaurantsDishes extends AppCompatActivity {
 //        fragmentTransaction.add(R.id.fragmentGetDish, fragmentGetDish);
 //        fragmentTransaction.commit();
 //    }
-    //Đổi ngôn ngữ
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(LocaleHelper.onAttach(base));

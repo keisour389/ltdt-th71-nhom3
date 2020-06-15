@@ -99,17 +99,17 @@ public class GetOrderActivity extends AppCompatActivity {
 //                break;
 //        }
         //Dùng if else để có thể dùng string resources
-        if (text.equals(getString(R.string.take_order)))
+        if (text.equals(String.valueOf(R.string.take_order)))
         {
-            changeButtonStatus(getString(R.string.order_taken), "#0731db");
+            changeButtonStatus(String.valueOf(R.string.order_taken), "#0731db");
             togglePhoneNumber(20, View.VISIBLE);
         }
-        else if (text.equals(getString(R.string.order_taken)))
+        else if (text.equals(String.valueOf(R.string.order_taken)))
         {
-            changeButtonStatus(getString(R.string.order_completed), "#0731db");
+            changeButtonStatus(String.valueOf(R.string.order_completed), "#0731db");
             togglePhoneNumber(20, View.VISIBLE);
         }
-        else if (text.equals(getString(R.string.order_completed)))
+        else if (text.equals(String.valueOf(R.string.order_completed)))
         {
             buttonGet.setVisibility(View.INVISIBLE); //Ẩn button đi
         }
@@ -170,7 +170,6 @@ public class GetOrderActivity extends AppCompatActivity {
             }
         });
     }
-    //Đổi ngôn ngữ
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(LocaleHelper.onAttach(base));

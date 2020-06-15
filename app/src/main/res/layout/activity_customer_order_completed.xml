@@ -163,7 +163,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="30dp"
                 android:textColor="@color/colorOrange"
-                android:text="Hóa đơn"/>
+                android:text="@string/bill"/>
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

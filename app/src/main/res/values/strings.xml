@@ -167,7 +167,18 @@
     //FragmentPickUp.java
     <string name="notice">Thông báo.</string>
     <string name="no_internet">KHÔNG CÓ INTERNET</string>
+    //food_bag.xml
+    <string name="order_will_go_to">Đơn hàng sẽ được giao đến địa chỉ</string>
+    <string name="your_phone_num">Số điện thoại của bạn</string>
+    <string name="reconfirm_order">Vui lòng kiểm tra lại đơn hàng</string>
+    <string name="note_for_driver">Ghi chú cho tài xế</string>
+    <string name="go_back">Quay Lại</string>
+    <string name="accept_order">Đặt hàng</string>
+    <string name="dish_count2">Số lượng</string>
     //Khác
+    <string name="bill">Hóa đơn</string>
+    <string name="note">Ghi chú</string>
+    <string name="ship_to">Giao hàng</string>
     <string name="filter">Lọc</string>
     <string name="order">Đơn hàng</string>
     <string name="search">Tìm kiếm</string>
