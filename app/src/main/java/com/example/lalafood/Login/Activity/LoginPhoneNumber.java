@@ -51,7 +51,7 @@ public class LoginPhoneNumber extends AppCompatActivity {
         //Nút quay lại
         actionBar.setDisplayHomeAsUpEnabled(true);
         //Set title
-        actionBar.setTitle(R.string.create_account);
+        actionBar.setTitle(R.string.sign_in);
         //Lấy AccountType
         Intent intent = getIntent();
         accountTypeId = intent.getIntExtra(SignInAndSignUp.LOGIN_TYPE_ID, 0); //Mặc định là 0

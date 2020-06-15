@@ -102,7 +102,13 @@ public class FragmentOrders extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 //Set text cứng
 //                ((TextView)view).setText("Lọc");
-                ((TextView)view).setText(getText(R.string.filter));
+//                try
+//                {
+//                    ((TextView)view).setText(getText(R.string.filter));
+//                }
+//                catch(Exception ex)
+//                {
+//                }
                 switch (position) {
                     case 0: //Đã nhận
                         //Các biến dùng để truyền

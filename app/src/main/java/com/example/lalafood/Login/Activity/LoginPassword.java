@@ -67,7 +67,7 @@ public class LoginPassword extends AppCompatActivity {
         //Nút quay lại
         actionBar.setDisplayHomeAsUpEnabled(true);
         //Set title
-        actionBar.setTitle(getText(R.string.create_account));
+        actionBar.setTitle(getText(R.string.sign_in));
         //Nhận giá trị từ intent
         Intent intent = getIntent();
         account = intent.getStringExtra(LoginPhoneNumber.ACCOUNT);
