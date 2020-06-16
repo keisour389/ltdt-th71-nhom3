@@ -192,7 +192,7 @@ public class FragmentPickUp extends Fragment {
             allOrders(getString(R.string.take_order));
         } else {
             ordersListView.setVisibility(View.GONE);
-            Toast.makeText(getContext(), "Ứng dụng đang nghĩ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), getString(R.string.app_rest_mode), Toast.LENGTH_SHORT).show();
         }
     }
     //Get account from local database

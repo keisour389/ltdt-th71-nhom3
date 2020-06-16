@@ -176,6 +176,7 @@
     <string name="accept_order">Đặt hàng</string>
     <string name="dish_count2">Số lượng</string>
     //Khác
+    <string name="app_rest_mode">Ứng dụng đang nghỉ</string>
     <string name="bill">Hóa đơn</string>
     <string name="note">Ghi chú</string>
     <string name="ship_to">Giao hàng</string>

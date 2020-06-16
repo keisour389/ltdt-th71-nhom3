@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.lalafood">
     <!-- Bật quyền sử dụng internet để lấy API từ heroku -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,10 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme2">
-        <activity android:name="com.example.lalafood.Customers.Activity.CustomerMainSearch" />
-        <activity android:name="com.example.lalafood.Customers.Activity.RestaurantsDishes" />
-        <activity android:name="com.example.lalafood.Customers.Activity.CustomerSearchedRestaurant" />
-        <activity android:name="com.example.lalafood.Customers.Activity.CustomerOrderCompleted" />
+        <activity
+            android:name="com.example.lalafood.Customers.Activity.CustomerMainSearch"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.example.lalafood.Customers.Activity.RestaurantsDishes"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name="com.example.lalafood.Customers.Activity.CustomerSearchedRestaurant"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name="com.example.lalafood.Customers.Activity.CustomerOrderCompleted"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity"/>
 <!--         <activity android:name=".login.Activity.SignInAndSignUp"></activity> -->
         <!-- <activity android:name=".TestAPI"></activity> -->
         <!-- <activity -->
@@ -28,25 +41,49 @@
         <!-- TEST -->
         <activity
             android:name="com.example.lalafood.Login.Activity.MainLogin"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- orders -->
-        <activity android:name="com.example.lalafood.Shippers.Activity.ShippersMainActivity" />
+        <activity
+            android:name="com.example.lalafood.Shippers.Activity.ShippersMainActivity"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name="com.example.lalafood.Shippers.Activity.GetOrderActivity"
-            android:label="@string/app_name" /> <!-- Login -->
+            android:label="@string/app_name"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity"/> <!-- Login -->
         <activity
             android:name="com.example.lalafood.Login.Activity.SignInAndSignUp"
-            android:theme="@style/AppTheme" />
-        <activity android:name="com.example.lalafood.Login.Activity.CreatePassword" />
-        <activity android:name="com.example.lalafood.Login.Activity.LoginPassword" />
-        <activity android:name="com.example.lalafood.Login.Activity.CreatePhoneNumber" />
-        <activity android:name="com.example.lalafood.Login.Activity.LoginPhoneNumber" />
-        <activity android:name="com.example.lalafood.Login.Activity.FormCreateAccount" />
+            android:theme="@style/AppTheme"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name="com.example.lalafood.Login.Activity.CreatePassword"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name="com.example.lalafood.Login.Activity.LoginPassword"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name="com.example.lalafood.Login.Activity.CreatePhoneNumber"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name="com.example.lalafood.Login.Activity.LoginPhoneNumber"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name="com.example.lalafood.Login.Activity.FormCreateAccount"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity"/>
     </application>
 
 </manifest>

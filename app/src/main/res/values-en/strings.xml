@@ -140,4 +140,5 @@
     <string name="your_phone_num">Your phone number</string>
     <string name="order_will_go_to">Order will be shipped to</string>
     <string name="bill">Bill</string>
+    <string name="app_rest_mode">App in rest mode</string>
 </resources>

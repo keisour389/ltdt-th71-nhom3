@@ -184,7 +184,7 @@
                         android:id="@+id/noteLable"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ghi chú đơn hàng: "
+                        android:text="@string/order_note"
                         android:textColor="#f000"
                         android:textSize="20sp">
                     </TextView>
@@ -200,7 +200,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Ghi chú"
+                        android:text="@string/note"
                         android:textColor="#f000"
                         android:textSize="20sp">
                     </TextView>
@@ -213,7 +213,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="#f7a305"
-        android:text="Nhận hàng"
+        android:text="@string/take_order"
         android:layout_weight="1"
         android:textSize="25sp" />
 
