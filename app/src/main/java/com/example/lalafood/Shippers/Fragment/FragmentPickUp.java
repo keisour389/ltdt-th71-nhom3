@@ -67,6 +67,7 @@ public class FragmentPickUp extends Fragment {
                     public void run() {
                         //Khi refresh sẽ chạy vào các hàm này
                         ordersListView.removeAllViewsInLayout();
+//                        allOrders(getString(R.string.take_order));
                         allOrders("Nhận hàng");
                         Toast.makeText(getActivity(), "Refresh", Toast.LENGTH_SHORT).show();
                         newOrdersSwipeLayout.setRefreshing(false);
@@ -79,6 +80,7 @@ public class FragmentPickUp extends Fragment {
         ordersListView = (ListView) view.findViewById(R.id.ordersListId);
         //Làm mới layout
         ordersListView.removeAllViewsInLayout();
+//        allOrders(getString(R.string.take_order));
         allOrders("Nhận hàng");
         //Lấy tài khoản từ Shipper main
         Log.d("account", account);
@@ -115,27 +117,21 @@ public class FragmentPickUp extends Fragment {
                 //Tìm thấy
                 Log.d("Response", "Success");
                 final Orders[] ordersList = response.body().getOrdersList(); //Lấy các giá trị tìm được gán vào List
-                int index = 1;
                 for (Orders order : ordersList) {
                     if(order.getStatus().equals(status))
                     {
                         //Gán giá trị vào
                         orderName.add(order.getName());
                         orderId.add(order.getOrderId());
-                        //Tạm thời chưa split, chờ CSDL chính thức
-//                        pickUpAddress.add("Quận " + splitAddress(order.getPickUpAddress()));
-//                        shipAddress.add("Quận " + splitAddress(order.getShipAddress()));
                         pickUpAddress.add(order.getPickUpAddress());
                         shipAddress.add(order.getShipAddress());
                         orderNote.add(order.getNote());
                         orderFee.add(order.getShippingCost());
-                        index++;
                     }
                 }
-                Log.d("index", String.valueOf(index));
                 //Triển khai adapter
                 ordersAdapter = new OrdersAdapter(getActivity(), orderId, pickUpAddress, shipAddress, orderNote,
-                        orderFee, "Đơn hàng LaLaFood", "#fa9702");
+                        orderFee, getActivity().getText(R.string.lalafood_order).toString(), "#fa9702");
                 ordersListView.setAdapter(ordersAdapter);
                 //Xử lí switch
                 //Khi con switch thay đổi
@@ -155,10 +151,9 @@ public class FragmentPickUp extends Fragment {
                         //Put đã chọn đơn này
                         getOrderIntent.putExtra(IS_PICKUP, true);
                         //Put theo mã đơn hàng
-                        getOrderIntent.putExtra(ORDER_ID, ordersList[position].getOrderId());
+                        getOrderIntent.putExtra(ORDER_ID, orderId.get(position));
                         //Put tài khoản
                         getOrderIntent.putExtra(ACCOUNT, account);
-                        Log.d("OrderId", String.valueOf(ordersList[position].getOrderId()));
                         startActivity(getOrderIntent);
                     }
                 });
@@ -166,8 +161,8 @@ public class FragmentPickUp extends Fragment {
             @Override
             public void onFailure(Call<OrdersData> call, Throwable t) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("Thông báo.")
-                        .setMessage("KHÔNG CÓ INTERNET")
+                builder.setTitle(getString(R.string.notice))
+                        .setMessage(getString(R.string.no_internet))
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -192,7 +187,7 @@ public class FragmentPickUp extends Fragment {
             allOrders("Nhận hàng");
         } else {
             ordersListView.setVisibility(View.GONE);
-            Toast.makeText(getContext(), "Ứng dụng đang nghĩ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), getString(R.string.app_rest_mode), Toast.LENGTH_SHORT).show();
         }
     }
     //Get account from local database

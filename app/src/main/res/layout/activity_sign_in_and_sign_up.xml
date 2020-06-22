@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login.Login.SignInAndSignUp"
+    tools:context=".Login.Activity.SignInAndSignUp"
     android:background="@drawable/login_background">
     <LinearLayout
         android:layout_gravity="bottom|center"
@@ -18,21 +18,21 @@
             android:layout_height="50dp"
             android:background="#eb6a1a"
             android:textAllCaps="false"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
-            android:text="Tạo tài khoản" />
+            android:text="@string/create_account" />
         <Button
             android:id="@+id/signIn"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/border_color_orange"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textAllCaps="false"
             android:textColor="#eb6a1a"
             android:textStyle="bold"
-            android:text="Đăng nhập" />
+            android:text="@string/sign_in" />
         <TextView
             android:id="@+id/location"
             android:layout_marginTop="10dp"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textStyle="bold"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textColor="#FFFFFF"
             android:text="Tp.Hồ Chí Minh">
         </TextView>

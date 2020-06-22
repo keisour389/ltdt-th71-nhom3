@@ -20,7 +20,7 @@
             android:textColor="#fff"
             android:textSize="30dp"
             android:textStyle="bold"
-            android:text="Chọn cách thức"/>
+            android:text="@string/account_type"/>
         <Button
             android:id="@+id/customersLogin"
             android:layout_marginTop="30dp"
@@ -31,7 +31,7 @@
             android:textStyle="bold"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:text="Khách hàng" />
+            android:text="@string/customer_type" />
         <Button
             android:id="@+id/shippersLogin"
             android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             android:textStyle="bold"
             android:textAllCaps="false"
             android:textColor="#eb6a1a"
-            android:text="Người giao hàng" />
+            android:text="@string/shipper" />
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"
@@ -51,5 +51,5 @@
         android:textAlignment="center"
         android:textColor="#fff"
         android:textSize="20dp"
-        android:text="Sử dụng tài khoản với loại hình đã chọn"/>
+        android:text="@string/account_chosen"/>
 </FrameLayout>

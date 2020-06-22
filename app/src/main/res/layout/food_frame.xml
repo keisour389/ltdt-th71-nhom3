@@ -14,30 +14,31 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="100dp">
+
         <TextView
             android:id="@+id/foodName"
-            android:layout_gravity="top|left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="top|left"
+            android:text="@string/dish_name_ff"
             android:textColor="@color/colorOrange"
-            android:textSize="20dp"
-            android:text="Tên món: "/>
+            android:textSize="20sp" />
         <TextView
             android:id="@+id/foodPrice"
             android:layout_gravity="bottom|left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#F000"
-            android:textSize="20dp"
-            android:text="Giá tiền: "/>
+            android:textSize="20sp"
+            android:text="@string/dish_price_ff"/>
         <TextView
             android:id="@+id/foodUnit"
             android:layout_gravity="bottom|right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#F000"
-            android:textSize="20dp"
-            android:text="Đơn vị"/>
+            android:textSize="20sp"
+            android:text="@string/dish_currency"/>
     </FrameLayout>
 
 </LinearLayout>

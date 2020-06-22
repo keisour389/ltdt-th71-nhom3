@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.lalafood.API.OrdersFoodAPI;
 import com.example.lalafood.API.Req.Users;
 import com.example.lalafood.API.Req.UsersData;
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -65,7 +66,7 @@ public class CreatePhoneNumber extends AppCompatActivity {
         //Nút quay lại
         actionBar.setDisplayHomeAsUpEnabled(true);
         //Set title
-        actionBar.setTitle("Tạo tài khoản");
+        actionBar.setTitle(getText(R.string.create_account));
 
     }
     private boolean kiemTraRong() {
@@ -116,7 +117,7 @@ public class CreatePhoneNumber extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(context, "Tài khoản này đã tồn tại.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, R.string.number_exist, Toast.LENGTH_LONG).show();
                 }
             }
             @Override
@@ -137,5 +138,9 @@ public class CreatePhoneNumber extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
+    //Đổi ngôn ngữ
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
+    }
 }

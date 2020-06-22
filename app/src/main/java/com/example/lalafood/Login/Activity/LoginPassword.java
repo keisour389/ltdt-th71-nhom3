@@ -17,6 +17,7 @@ import com.example.lalafood.API.OrdersFoodAPI;
 import com.example.lalafood.API.Req.Users;
 import com.example.lalafood.API.Req.UsersData;
 import com.example.lalafood.Customers.Activity.CustomerMainSearch;
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.R;
 import com.example.lalafood.SQLite.DatabaseContext;
 import com.example.lalafood.Shippers.Activity.ShippersMainActivity;
@@ -59,14 +60,14 @@ public class LoginPassword extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (txtEMatKhau.getText().toString().isEmpty()) {
-                    txtEMatKhau.setError("VUI LÒNG KHÔNG ĐỂ TRỐNG !");
+                    txtEMatKhau.setError(getText(R.string.no_empty_password));
                 }
             }
         });
         //Nút quay lại
         actionBar.setDisplayHomeAsUpEnabled(true);
         //Set title
-        actionBar.setTitle("Đăng nhập");
+        actionBar.setTitle(getText(R.string.sign_in));
         //Nhận giá trị từ intent
         Intent intent = getIntent();
         account = intent.getStringExtra(LoginPhoneNumber.ACCOUNT);
@@ -135,14 +136,13 @@ public class LoginPassword extends AppCompatActivity {
                         //Tạm thời get theo user name, chờ access token
                         if(!userAccount[0].getPassword().equals(password)) //Không sử dụng toán tử
                         {
-                            Toast.makeText(context, "Sai mật khẩu. Vui lòng nhập lại", Toast.LENGTH_LONG).show();
+                            Toast.makeText(context, R.string.wrong_password, Toast.LENGTH_LONG).show();
                         }
                         else
                         {
                             //Nếu đúng thì đến bước tiếp
                             Intent TV = new Intent(context, ShippersMainActivity.class);
                             handleDatabase(databaseContext, userAccount[0].getUserName(), userAccount[0].getPassword());
-//                        TV.putExtra(ACCOUNT, userAccount[0].getUserName());
                             startActivity(TV); //Đăng nhập thành công
                         }
                     }
@@ -175,7 +175,7 @@ public class LoginPassword extends AppCompatActivity {
                         //Tạm thời get theo user name, chờ access token
                         if(!userAccount[0].getPassword().equals(password)) //Không sử dụng toán tử
                         {
-                            Toast.makeText(context, "Sai mật khẩu. Vui lòng nhập lại", Toast.LENGTH_LONG).show();
+                            Toast.makeText(context, R.string.wrong_password, Toast.LENGTH_LONG).show();
                         }
                         else
                         {
@@ -191,13 +191,6 @@ public class LoginPassword extends AppCompatActivity {
                     {
                         //
                     }
-
-//                    dataSqlite = getCustomerFromDatabase();//Lấy data từ SQLite
-//                    //Gán text vào address
-//                    while (dataSqlite.moveToNext())
-//                    {
-//                        customerAddress.setText(dataSqlite.getString(3));//Địa chỉ cột 4
-//                    }
                     Log.d("Update", "Success");
                 }
                 @Override
@@ -261,5 +254,10 @@ public class LoginPassword extends AppCompatActivity {
             Log.d("GetAccount", a);
             i++;
         }
+    }
+    //Đổi ngôn ngữ
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

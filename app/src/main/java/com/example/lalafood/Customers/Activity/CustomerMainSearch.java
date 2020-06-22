@@ -1,13 +1,16 @@
 package com.example.lalafood.Customers.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,6 +30,8 @@ import com.example.lalafood.API.Req.Users;
 import com.example.lalafood.API.Req.UsersData;
 import com.example.lalafood.Customers.Adapter.CategoryAdapter;
 import com.example.lalafood.Customers.Adapter.CustomPagerAdapter;
+import com.example.lalafood.FragmentLanguage;
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.Login.Activity.CreatePhoneNumber;
 import com.example.lalafood.Login.Activity.LoginPhoneNumber;
 import com.example.lalafood.Login.Activity.MainLogin;
@@ -34,6 +39,8 @@ import com.example.lalafood.R;
 import com.example.lalafood.SQLite.DatabaseContext;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -62,6 +69,7 @@ public class CustomerMainSearch extends AppCompatActivity {
     private Button buttonCustomerSignUp;
     private TextView customerNameInOptions;
     private FrameLayout customerLogout;
+    private FrameLayout customerChangeLanguage;
     private Button closeCustomerOptions;
     private LinearLayout customerChooseOptions;
     //Database
@@ -114,6 +122,7 @@ public class CustomerMainSearch extends AppCompatActivity {
         buttonCustomerSignUp = includeCustomerOptions.findViewById(R.id.buttonCustomerSignUp);
         customerNameInOptions = includeCustomerOptions.findViewById(R.id.customerNameInOptions);
         customerLogout = includeCustomerOptions.findViewById(R.id.customerLogout);
+        customerChangeLanguage = includeCustomerOptions.findViewById(R.id.customerChangeLanguage);
         closeCustomerOptions = includeCustomerOptions.findViewById(R.id.closeCustomerOptions);
         customerChooseOptions = includeCustomerOptions.findViewById(R.id.customerChooseOptions);
         //Ẩn action bar
@@ -167,16 +176,10 @@ public class CustomerMainSearch extends AppCompatActivity {
                         break;
                 }
                 startActivity(intent);
-                if (position == 0){
-//                    Intent rest = new Intent(TrangChuChuaTimKiem.this, TrangChuTimKiemNhaHang.class);
-//                    startActivity(rest);
-                }
             }
         });
-//        getCustomerByAccount("0704617688");//Lấy thông tin từ API
         //Xét trạng thái đăng nhập
         dataSqlite = getCustomerFromDatabase();//Lấy data từ SQLite
-        //customerAccount = getCustomerAccountFromDatabase();
         if(dataSqlite.getCount() > 0) //Đã đăng nhập trước đó
         {
             //Gán text vào address
@@ -203,7 +206,7 @@ public class CustomerMainSearch extends AppCompatActivity {
             //Mở trạng thái chưa đăng nhập
             customerDontLoginIn.setVisibility(View.VISIBLE);
             //Chưa có địa chỉ
-            customerAddress.setText("Bạn chưa đăng nhập");//Địa chỉ cột 4
+            customerAddress.setText(R.string.not_signin);//Địa chỉ cột 4
         }
         //Tìm kiếm
         search_bar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -230,6 +233,13 @@ public class CustomerMainSearch extends AppCompatActivity {
                 includeCustomerOptions.setVisibility(View.VISIBLE);
                 //Ẩn trang chủ
                 customerMain.setVisibility(View.GONE);
+            }
+        });
+        //Chuyển đổi ngôn ngữ
+        customerChangeLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeLanguage();
             }
         });
         //Đăng xuất
@@ -280,37 +290,6 @@ public class CustomerMainSearch extends AppCompatActivity {
             .addConverterFactory(GsonConverterFactory.create(gson)) //Sử dụng file JSON
             .build();
     OrdersFoodAPI ordersFoodAPI = retrofit.create(OrdersFoodAPI.class); //Khởi tạo các controller
-    public void getCustomerByAccount(String account)
-    {
-        Call<UsersData> call = ordersFoodAPI.getUserByAccount(account); //id này là request
-        call.enqueue(new Callback<UsersData>() {
-            Users[] users;
-            @Override
-            public void onResponse(Call<UsersData> call, Response<UsersData> response) {
-                //Không tìm thấy
-                if (!response.isSuccessful()) {
-                    Log.d("Update", "Failed");
-                    return;
-                }
-                //Tìm thấy
-                users = response.body().getUsersList();
-                //Ghi DL xuống SQLite
-                setCustomerToDatabase(users[0].getUserName(), users[0].getFirstName(),
-                        users[0].getLastName(), users[0].getAddress()); //Lưu dữ liệu vào data base
-                dataSqlite = getCustomerFromDatabase();//Lấy data từ SQLite
-                //Gán text vào address
-                while (dataSqlite.moveToNext())
-                {
-                    customerAddress.setText(dataSqlite.getString(3));//Địa chỉ cột 4
-                }
-                Log.d("Update", "Success");
-            }
-            @Override
-            public void onFailure(Call<UsersData> call, Throwable t) {
-                Log.d("Update", "Error");
-            }
-        });
-    }
     DatabaseContext databaseContext = new DatabaseContext(this, "Local", null, 1);
     //Get account from local database
     private void setCustomerToDatabase(String account, String firstName, String lastName,
@@ -355,16 +334,16 @@ public class CustomerMainSearch extends AppCompatActivity {
     public void logoutAlert()
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Đăng xuất.")
-                .setMessage("Bạn có chắc chắn muốn đăng xuất ?")
-                .setPositiveButton("Xác nhận", new DialogInterface.OnClickListener() {
+        builder.setTitle(getText(R.string.sign_out) + ".")
+                .setMessage(getText(R.string.signout_confirm_question))
+                .setPositiveButton(R.string.confirm_no_caps, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(context, MainLogin.class); //Chuyển về trang đăng xuất
                         startActivity(intent);
                     }
                 })
-                .setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();
@@ -374,61 +353,17 @@ public class CustomerMainSearch extends AppCompatActivity {
         //Drop table khi logout, để nhận giá trị mới
         databaseContext.QueryData("DROP TABLE CustomerAccount;");
     }
-    //Get customer account from local database
-    private String getCustomerAccountFromDatabase()
-    {
-        String result = "";
-        //Database
-        DatabaseContext databaseContext = new DatabaseContext(this, "Local", null, 1);
-        //Tạo bảng
-        databaseContext.QueryData("CREATE TABLE IF NOT EXISTS CustomerAccount(Account NVARCHAR(50), Password NVARCHAR (50))");
-        Cursor getData = databaseContext.GetData
-                ("SELECT *\n" +
-                        "FROM CustomerAccount");
-        Log.d("GetCount", String.valueOf(getData.isFirst()));
-        while(getData.moveToNext()) //The first row
-        {
-            result = getData.getString(0);//Account nằm cột 1
-            Log.d("CustomerAccount", result);
-        }
-        return result;
-    }
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu){ // Inflate menu
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.main_menu, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        switch(item.getItemId()){
-//            case R.id.action_change_address:
-//                return true;
-//            case R.id.action_change_language:
-//                DialogFragment langFrag = FragmentNgonNgu.newInstance();
-//                langFrag.show(getSupportFragmentManager(), "tag");
-//                return true;
-//            case R.id.action_check_order:
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
-//
-//    @Override
-//    protected void attachBaseContext(Context base) {
-//        super.attachBaseContext(LocaleHelper.onAttach(base));
-//    }
 
-//    public void languageSelect(String lang)
-//    {
-//        Locale locale = new Locale(lang); //Chọn locale theo biến lang
-//        Configuration config = new Configuration();
-//        config.locale = locale; //Set locale cho activity
-//        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-//        //Cập nhật ngôn ngữ đã chọn ở trên
-//        Intent intent = new Intent(TrangChuChuaTimKiem.this, TrangChuChuaTimKiem.class); // Khởi động lại activity
-//        startActivity(intent);
-//    }
+    public void changeLanguage()
+    {
+        DialogFragment langFrag = FragmentLanguage.newInstance();
+        langFrag.show(getSupportFragmentManager(), "tag");
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
+    }
+
+
 }

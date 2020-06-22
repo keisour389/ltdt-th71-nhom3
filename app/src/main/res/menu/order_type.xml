@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/ordersPickedUp"
-        android:title="Đã nhận">
+        android:title="@string/order_taken">
 
     </item>
     <item
         android:id="@+id/ordersCancelled"
-        android:title="Đã hủy">
+        android:title="@string/order_canceled">
 
     </item>
     <item
         android:id="@+id/ordersCompleted"
-        android:title="Đã hoàn thành">
+        android:title="@string/order_completed">
 
     </item>
     <item
         android:id="@+id/allOrders"
-        android:title="Tất cả đơn hàng">
+        android:title="@string/all_orders">
 
     </item>
 </menu>

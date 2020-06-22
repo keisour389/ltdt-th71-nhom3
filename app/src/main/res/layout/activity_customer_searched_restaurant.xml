@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Customer.CustomerSearchedRestaurant">
+    tools:context=".Customers.Activity.CustomerSearchedRestaurant">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,14 +14,14 @@
             android:id="@+id/searchRestaurantLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textColor="@color/colorOrange"
-            android:text="Kết quả tìm kiếm hiển thị: "/>
+            android:text="@string/result"/>
         <TextView
             android:id="@+id/searchRestaurant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textColor="@color/colorOrange"
             android:text=" ''  '' "/>
     </LinearLayout>

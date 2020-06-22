@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="25dp"
                 android:textColor="@color/colorOrange"
-                android:text="Đơn hàng sẽ được giao đến địa chỉ"/>
+                android:text="@string/order_will_go_to"/>
             <View
                 android:layout_margin="5dp"
                 android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                 android:id="@+id/customerAddressInOrder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textColor="#F000"
                 android:text="371 Nguyễn Kiệm, Phường 3 , Quận Gò Vấp, TpHCM"/>
         </LinearLayout>
@@ -48,9 +48,9 @@
                 android:id="@+id/customerNumberPhoneInOrderLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:textColor="@color/colorOrange"
-                android:text="Số điện thoại của bạn"/>
+                android:text="@string/your_phone_num"/>
             <View
                 android:layout_margin="5dp"
                 android:layout_width="match_parent"
@@ -60,7 +60,7 @@
                 android:id="@+id/customerNumberPhoneInOrder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textColor="#F000"
                 android:text="0902725706"/>
         </LinearLayout>
@@ -76,9 +76,9 @@
                 android:id="@+id/customerOrderListInOrderLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:textColor="@color/colorOrange"
-                android:text="Vui lòng kiểm tra lại đơn hàng"/>
+                android:text="@string/reconfirm_order"/>
             <View
                 android:layout_margin="5dp"
                 android:layout_width="match_parent"
@@ -92,17 +92,20 @@
                     <TextView
                         android:textSize="20dp"
                         android:textColor="#F000"
-                        android:text="Tên món"></TextView>
+                        android:text="@string/dish_name">
+                    </TextView>
                     <TextView
                         android:textSize="20dp"
                         android:textColor="#F000"
                         android:textAlignment="center"
-                        android:text="Số lượng"></TextView>
+                        android:text="@string/dish_count2">
+                    </TextView>
                     <TextView
                         android:textSize="20dp"
                         android:textColor="#F000"
                         android:textAlignment="viewEnd"
-                        android:text="Giá tiền"></TextView>
+                        android:text="@string/price_order">
+                    </TextView>
                 </TableRow>
             </TableLayout>
             <ListView
@@ -110,7 +113,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textColor="#F000" />
         </LinearLayout>
         <LinearLayout
@@ -125,9 +128,9 @@
                 android:id="@+id/customerNoteInOrderLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:textColor="@color/colorOrange"
-                android:text="Ghi chú cho tài xế"/>
+                android:text="@string/note_for_driver"/>
             <View
                 android:layout_margin="5dp"
                 android:layout_width="match_parent"
@@ -137,7 +140,7 @@
                 android:id="@+id/customerNoteInOrder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textColor="#F000"
                 android:text="Đây là ghi chú"/>
         </LinearLayout>
@@ -155,16 +158,16 @@
                     android:background="@drawable/border_color_orange"
                     android:textStyle="bold"
                     android:textColor="@color/colorOrange"
-                    android:textSize="30dp"
-                    android:text="Quay Lại"/>
+                    android:textSize="30sp"
+                    android:text="@string/go_back"/>
                 <Button
                     android:id="@+id/customerOrderComplete"
                     android:textAllCaps="false"
                     android:background="@color/colorOrange"
                     android:textStyle="bold"
                     android:textColor="#FFFFFF"
-                    android:textSize="30dp"
-                    android:text="Đặt hàng"/>
+                    android:textSize="30sp"
+                    android:text="@string/accept_order"/>
             </TableRow>
         </TableLayout>
     </LinearLayout>

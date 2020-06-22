@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Customer.RestaurantsDishes">
+    tools:context=".Customers.Activity.RestaurantsDishes">
     <!--fillViewport cho phép mở rộng chiều cao các thuộc tính bên dưới-->
     <ScrollView
         android:layout_width="match_parent"
@@ -33,9 +33,9 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:textColor="#F000"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     android:textStyle="bold"
-                    android:text="Tên nhà hàng"/>
+                    android:text="@string/rest_name"/>
                 <ListView
                     android:id="@+id/foodsRestaurantList"
                     android:layout_marginTop="10dp"
@@ -66,15 +66,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
-                android:textSize="20dp"
-                android:text="Tổng món: "/>
+                android:textSize="20sp"
+                android:text="@string/dish_count_total"/>
             <TextView
                 android:id="@+id/dishAmountInTotal"
                 android:layout_gravity="center|left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:text="0"/>
         </LinearLayout>
 
@@ -86,8 +86,8 @@
             android:background="@color/colorOrange"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            android:text="Giỏ hàng"/>
+            android:textSize="20sp"
+            android:text="@string/cart"/>
         <LinearLayout
             android:layout_gravity="center|right"
             android:layout_width="wrap_content"
@@ -98,8 +98,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
-                android:textSize="20dp"
-                android:text="Tổng tiền"/>
+                android:textSize="20sp"
+                android:text="@string/total_before_checkout"/>
             <TextView
                 android:id="@+id/dishTotalPrice"
                 android:layout_gravity="center|left"
@@ -107,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:text="0"/>
         </LinearLayout>
     </FrameLayout>

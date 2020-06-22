@@ -1,61 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Nhận hàng</string>
-    ---------------
-    //Đồ ăn
-    <string name="search_hint_dish">Nhập tên món ăn của nhà hàng này</string>
-    <string name="dish_display">Danh sách các món ăn</string>
-    <string name="dish_picture_description"> Món ăn </string>
-    <string name="dish_description">Miêu tả món ăn</string>
-    <string name="dish_name">Tên món</string>
     <string name="confirm_order">Xác nhận đơn hàng</string>
-    <string name="dish_count">Số lượng:</string>
-    <string name="dish_restaurant_count_confirm">Xác nhận số lượng</string>
-    ---------------
-    //Nhà hàng
     <string name="list_rest">Danh sách các nhà hàng</string>
     <string name="search_hint">Nhập tên nhà hàng hoặc món ăn</string>
     <string name="rest_picture_description">Nhà hàng</string>
     <string name="rest_address">Địa chỉ nhà hàng</string>
     <string name="rest_name">Tên nhà hàng</string>
-    <string name="cart">Giỏ hàng</string>
-    <string name="total_before_checkout">Tổng tiền</string>
-    <string name="dish_count_total">Tổng món: </string>
     <string name="opening_time">Giờ mở cửa:</string>
     <string name="coupon">Mã giảm giá:</string>
-    <string name="result">Kết quả tìm kiếm hiển thị: </string>
-    ---------------
-    //Menu
     <string name="check_order">Kiểm tra đơn hàng</string>
-    <string name="change_language">Chuyển đổi ngôn ngữ</string>
+    <string name="change_language">Đổi ngôn ngữ</string>
     <string name="change_address">Đổi địa chỉ giao hàng</string>
-    ---------------
-    //Tạo số điện thoại đăng ký
     <string name="hello">AppOrder xin chào!</string>
     <string name="enter_phone_number">Số điện thoại của bạn là gì?</string>
     <string name="hint_phone_number">Nhập số điện thoại</string>
     <string name="next_phone_number">Tiếp Theo</string>
-    ---------------
-    //Tạo mật khẩu
     <string name="next_registration">Tiếp theo</string>
     <string name="enter_password_signup">Hãy nhập mật khẩu của bạn!</string>
     <string name="hint_password_signup">Mật khẩu người đăng ký</string>
     <string name="hint_confirm_password_signup">Nhập lại mật khẩu người đăng ký</string>
-    ---------------
-    //Khách hàng hoàn thành mua đồ ăn
     <string name="order_id">Mã đơn hàng</string>
     <string name="shipper_found">Đã tìm thấy tài xế</string>
     <string name="order_status">Tình trạng đơn hàng</string>
     <string name="verifying_order">Đang   kiểm tra</string>
     <string name="order_arrive">Đã   đến nơi</string>
     <string name="shipper">Tài xế</string>
-    <string name="shipper_name">Họ tên: </string>
-    <string name="shipper_phone">Số điện thoại: </string>
+    <string name="shipper_name">"Họ tên: "</string>
+    <string name="shipper_phone">"Số điện thoại: "</string>
+    <string name="order">Đơn hàng</string>
     <string name="price_order">Giá tiền</string>
-    <string name="shipping_fee">Phí giao hàng: </string>
+    <string name="shipping_fee">"Phí giao hàng: "</string>
     <string name="shipping_address">Địa chỉ nhận hàng</string>
     <string name="order_note">Ghi chú đơn hàng</string>
-    ---------------
-    //Tạo tài khoản
     <string name="email">Email người đăng ký</string>
     <string name="sign_up">Đăng ký</string>
     <string name="last_name_registration">Họ người đăng ký</string>
@@ -64,47 +41,52 @@
     <string name="enter_full_registration_info">Mời người đăng ký nhập đầy đủ thông tin đăng ký!</string>
     <string name="registration_info">Thông tin đăng ký</string>
     <string name="date_of_birth">Chọn Ngày Sinh</string>
-    <string name="gender"> Chọn giới tính:</string>
+    <string name="gender">" Chọn giới tính:"</string>
     <string name="gender_male">Nam</string>
     <string name="gender_female">Nữ</string>
-    ---------------
-    //Đăng nhập (Mật khẩu)
     <string name="hint_password_signin">Mật khẩu người đăng nhập</string>
     <string name="signin">Đăng Nhập</string>
     <string name="enter_password_signin">Hãy nhập mật khẩu của bạn!</string>
-    ---------------
-    //Chọn cách thức đăng nhập
     <string name="account_type">Chọn cách thức</string>
     <string name="customer_type">Khách hàng</string>
     <string name="shipper_type">Người giao hàng</string>
     <string name="account_chosen">Sử dụng tài khoản với loại hình đã chọn</string>
-    ---------------
-    //Đăng nhập và đăng kí
     <string name="create_account">Tạo tài khoản</string>
     <string name="sign_in">Đăng nhập</string>
-    ---------------
-    //Khách hàng tìm kiếm_chính
-    <string name="search_hint_dishes">Tìm thử món ăn bạn yêu thích đi nào…</string>
+    <string name="search_hint_dishes">Tìm thử món ăn bạn yêu thích đi nào...</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="more">Các tùy chọn khác</string>
+    <string name="languages">Ngôn ngữ</string>
+    <string name="accounts">Đổi tài khoản...</string>
+    <string name="confirm_caps">Đổi tài khoản...</string>
+    <string name="total">Tổng cộng:</string>
+    <string name="lang_viet">Tiếng Việt</string>
+    <string name="lang_english">Tiếng Anh</string>
+    <string name="search_hint_dish">Nhập tên món ăn của nhà hàng này</string>
+    <string name="dish_display">Danh sách các món ăn</string>
+    <string name="dish_picture_description">" Món ăn "</string>
+    <string name="dish_description">Miêu tả món ăn</string>
+    <string name="dish_name">Tên món</string>
+    <string name="dish_count">Số lượng:</string>
+    <string name="dish_restaurant_count_confirm">Xác nhận số lượng</string>
+    <string name="preparing_order">Đang   chuẩn bị</string>
+    <string name="shipping_order">Đang   giao hàng</string>
+    <string name="category_description">Hình danh mục</string>
+    <string name="your_order">Đơn của bạn</string>
+    <string name="dish_count_total">"Tổng món: "</string>
+    <string name="working_status_on">Trạng thái: Làm việc</string>
+    <string name="cart">Giỏ hàng</string>
+    <string name="total_before_checkout">Tổng tiền</string>
     <string name="fav_categories">Danh mục ưa thích</string>
-    ---------------
-    //Khách hàng Option
     <string name="not_signin">Bạn chưa đăng nhập</string>
     <string name="option">Cài đặt</string>
     <string name="sign_out">Đăng xuất</string>
-    ---------------
-    //Khách hàng check out
     <string name="dish">Món ăn</string>
     <string name="single_price">Đơn giá</string>
-    ---------------
-    //Food frame
-    <string name="dish_name_ff">Tên món: </string>
-    <string name="dish_price_ff">Giá tiền: </string>
+    <string name="dish_name_ff">"Tên món: "</string>
+    <string name="dish_price_ff">"Giá tiền: "</string>
     <string name="dish_currency">Đơn vị</string>
-    ---------------
-    //Get dish
     <string name="get_more_dish">Thêm món</string>
-    ---------------
-    //Get order
     <string name="order_time">Thời gian</string>
     <string name="pay_type">Trả bởi khách hàng:</string>
     <string name="ship_fee_cash">Tiền mặt</string>
@@ -112,62 +94,44 @@
     <string name="order_type_now">Đơn hàng giao ngay</string>
     <string name="pickup_address">Điểm nhận: 371 Nguyễn Kiệm F3 Quận Gò Vấp TpHCM</string>
     <string name="ship_address">Điểm giao: Thích giao đâu thì giao :))</string>
-    ---------------
-    //Option
     <string name="shipper_info">Thông tin cá nhân</string>
-    <string name="account">Tài khoản: </string>
-    <string name="name">Họ tên: </string>
-    <string name="create_date">Ngày hợp tác: </string>
+    <string name="account">"Tài khoản: "</string>
+    <string name="name">"Họ tên: "</string>
+    <string name="create_date">"Ngày hợp tác: "</string>
     <string name="options">Quản lí ứng dụng</string>
-    ---------------
-    //Order
-    <string name="order_type">Loại đơn hàng: </string>
-    ---------------
-    //Pickup
-    <string name="working_status_on">Trạng thái: Làm việc</string>
-    ---------------
-    //Restaurant
-    <string name="opening">Mở cửa: </string>
-    <string name="closing">Đóng cửa: </string>
-    ---------------
-    //CustomerMainSearch.java
+    <string name="close">Đóng</string>
+    <string name="decrease">Giảm</string>
+    <string name="increase">Tăng</string>
+    <string name="status">Tình trạng</string>
+    <string name="opening">"Mở cửa: "</string>
+    <string name="closing">"Đóng cửa: "</string>
     <string name="signout_confirm_question">Bạn có chắc chắn muốn đăng xuất ?</string>
     <string name="confirm_no_caps">Xác nhận</string>
-    ---------------
-    //CustomerOrderCompleted.java
     <string name="order_id_num">Mã đơn: #</string>
     <string name="take_order">Nhận hàng</string>
     <string name="order_taken">Đã nhận</string>
     <string name="order_on_the_way">Đang giao</string>
     <string name="order_completed">Hoàn thành</string>
-    <string name="order_canceled">Đã hủy</string>
-    ---------------
-    //RestaurantDishes.java
+    <string name="cancel">Hủy</string>
     <string name="sign_in_or_sign_up">Đăng nhập hoặc đăng kí ngay nào !!!</string>
     <string name="later">Lúc khác</string>
     <string name="lalafood_order">Đơn hàng LaLaFood</string>
-    ---------------
-    //CreatePassword.java
     <string name="no_empty_password">VUI LÒNG KHÔNG ĐỂ TRỐNG !</string>
-    ---------------
-    //CreatePhoneNumber.java
     <string name="number_exist">Tài khoản này đã tồn tại.</string>
-    ---------------
-    //FormCreateAccount.java
     <string name="create_success">Chúc mừng bạn tạo tài khoản thành công.</string>
     <string name="unexpected_error">Đã xảy ra lỗi bất thường.</string>
     <string name="normal">Bình thường</string>
-    ---------------
-    //LoginPassword.java
     <string name="wrong_password">Sai mật khẩu. Vui lòng nhập lại</string>
-    ---------------
-    //LoginPhoneNumber.java
     <string name="number_not_exist">Số điện thoại không tồn tại.</string>
-    ---------------
-    //FragmentPickUp.java
     <string name="notice">Thông báo.</string>
     <string name="no_internet">KHÔNG CÓ INTERNET</string>
-    //food_bag.xml
+    <string name="result">"Kết quả tìm kiếm hiển thị: "</string>
+    <string name="order_type">Loại đơn hàng:</string>
+    <string name="order_canceled">Đã hủy</string>
+    <string name="filter">Lọc</string>
+    <string name="all_orders">Tất cả đơn hàng</string>
+    <string name="ship_to">Giao hàng</string>
+    <string name="note">Ghi chú</string>
     <string name="order_will_go_to">Đơn hàng sẽ được giao đến địa chỉ</string>
     <string name="your_phone_num">Số điện thoại của bạn</string>
     <string name="reconfirm_order">Vui lòng kiểm tra lại đơn hàng</string>
@@ -175,48 +139,7 @@
     <string name="go_back">Quay Lại</string>
     <string name="accept_order">Đặt hàng</string>
     <string name="dish_count2">Số lượng</string>
-    //Khác
-    <string name="select_language">Chọn ngôn ngữ</string>
-    <string name="app_rest_mode">Ứng dụng đang nghỉ</string>
     <string name="bill">Hóa đơn</string>
-    <string name="note">Ghi chú</string>
-    <string name="ship_to">Giao hàng</string>
-    <string name="filter">Lọc</string>
-    <string name="order">Đơn hàng</string>
-    <string name="search">Tìm kiếm</string>
-    <string name="more">Các tùy chọn khác</string>
-    <string name="languages">Ngôn ngữ</string>
-    <string name="accounts">Đổi tài khoản…</string>
-    <string name="category_description">Hình danh mục</string>
-    <string name="your_order">Đơn của bạn</string>
-    <string name="confirm_caps">XÁC NHẬN</string>
-    <string name="total">Tổng cộng:</string>
-    <string name="lang_english">Tiếng Anh</string>
-    <string name="lang_viet">Tiếng Việt</string>
-    <string name="close">Đóng</string>
-    <string name="decrease">Giảm</string>
-    <string name="increase">Tăng</string>
-    <string name="status">Tình trạng</string>
-    <string name="cancel">Hủy</string>
-    <string name="all_orders">Tất cả đơn hàng</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="red" translatable="false" />
-    <string name="blue" translatable="false" />
-    <string name="orange" translatable="false" />
-    <string name="title_activity_main2" translatable="false">Main2Activity</string>
-    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
-    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-    <string name="nav_header_title" translatable="false">Android Studio</string>
-    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
-    <string name="nav_header_desc" translatable="false">Navigation header</string>
-    <string name="action_settings" translatable="false">Settings</string>
-
-    <string name="menu_home" translatable="false">Home</string>
-    <string name="menu_gallery" translatable="false">Gallery</string>
-    <string name="menu_slideshow" translatable="false">Slideshow</string>
-
-    <string name="home_second" translatable="false">Home Second</string>
-
-    <string name="preparing_order">Đang   chuẩn bị</string>
-    <string name="shipping_order">Đang   giao hàng</string>
+    <string name="app_rest_mode">Ứng dụng đang nghỉ</string>
+    <string name="select_language">Chọn ngôn ngữ</string>
 </resources>

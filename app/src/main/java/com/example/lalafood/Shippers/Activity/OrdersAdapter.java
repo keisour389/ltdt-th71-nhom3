@@ -1,6 +1,7 @@
 package com.example.lalafood.Shippers.Activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.R;
 
 import java.util.ArrayList;
@@ -79,12 +81,17 @@ public class OrdersAdapter extends ArrayAdapter<String> {
         //Set title
         titleOrders.setText(textTitle);
         titleOrders.setBackgroundColor(Color.parseColor(textTitleColor)); //Parse color
+        //Set strings
+        String order_id = contextActivity.getResources().getString(R.string.order_id);
+        String take_order = contextActivity.getResources().getString(R.string.take_order);
+        String ship_to = contextActivity.getResources().getString(R.string.ship_to);
+        String notes = contextActivity.getResources().getString(R.string.note);
         //Set body
-        oId.setText("Mã đơn hàng: " + orderId.get(position).toString()); //toString vì id là số
-        pAddress.setText("Nhận hàng: " + pickUpAddress.get(position));
-        sAddress.setText("Giao hàng: " + shipAddress.get(position));
-        nOte.setText("Ghi chú: " + note.get(position));
-        shipCost.setText(shipFee.get(position).toString() + " VNĐ"); //Kiểm tra là nhận hàng
+        oId.setText(order_id + ": " + orderId.get(position).toString()); //toString vì id là số
+        pAddress.setText(take_order + ": " + pickUpAddress.get(position));
+        sAddress.setText(ship_to + ": " + shipAddress.get(position));
+        nOte.setText(notes + ":  " + note.get(position));
+        shipCost.setText(String.format("%s VNĐ", shipFee.get(position).toString())); //Kiểm tra là nhận hàng
         //
         return rowValue;
     }

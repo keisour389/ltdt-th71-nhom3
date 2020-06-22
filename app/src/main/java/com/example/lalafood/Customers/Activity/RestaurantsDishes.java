@@ -34,6 +34,7 @@ import com.example.lalafood.API.Req.OrderDetailsCreateData;
 import com.example.lalafood.API.Req.Orders;
 import com.example.lalafood.Customers.Adapter.BillCustomerAdapter;
 import com.example.lalafood.Customers.Adapter.FoodAdapter;
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.Login.Activity.CreatePhoneNumber;
 import com.example.lalafood.Login.Activity.LoginPhoneNumber;
 import com.example.lalafood.R;
@@ -241,18 +242,25 @@ public class RestaurantsDishes extends AppCompatActivity {
         customerOrderComplete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                dataSqlite = getCustomerFromDatabase();
+                String account = "";
+                while(dataSqlite.moveToNext())
+                {
+                    account = dataSqlite.getString(0);
+                }
+                Log.d("account", account);
                 Date date = new Date();
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 String now = simpleDateFormat.format(date);
                 //Khởi tạo đối tượng
                 Orders orders = new Orders();
                 //Các đối tượng hệ thống gán
-                orders.setName("Đơn hàng LaLaFood");
+                orders.setName(getString(R.string.lalafood_order));
                 orders.setCreatedDate(now);
-                orders.setStatus("Nhận hàng");
-                orders.setCustomerId("NULL");//Test
+                orders.setStatus(getString(R.string.take_order));
+                orders.setCustomerId(account); //Lấy account
                 orders.setShipperId("NULL");
-                orders.setAdminId("NULL");
+                orders.setAdminId("manager1");
                 orders.setPickUpAddress(restaurantAddress);
                 orders.setShippingCost(20000); //Chưa xử lí được nên để mặc định
                 //Tự tạo
@@ -322,9 +330,9 @@ public class RestaurantsDishes extends AppCompatActivity {
                         if(dataSqlite.getCount() == 0) //Nếu chưa đăng nhập
                         {
                             AlertDialog.Builder builder = new AlertDialog.Builder(contextActivity);
-                            builder.setTitle("Bạn chưa đăng nhập")
-                                    .setMessage("Đăng nhập hoặc đăng kí ngay nào !!!")
-                                    .setPositiveButton("Đăng kí", new DialogInterface.OnClickListener() {
+                            builder.setTitle(getText(R.string.not_signin))
+                                    .setMessage(R.string.sign_in_or_sign_up)
+                                    .setPositiveButton(R.string.sign_up, new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             Intent intent = new Intent(context, CreatePhoneNumber.class);
@@ -332,7 +340,7 @@ public class RestaurantsDishes extends AppCompatActivity {
                                             startActivity(intent);
                                         }
                                     })
-                                    .setNegativeButton("Đăng nhập", new DialogInterface.OnClickListener() {
+                                    .setNegativeButton(R.string.sign_in, new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             Intent intent = new Intent(context, LoginPhoneNumber.class);
@@ -340,7 +348,7 @@ public class RestaurantsDishes extends AppCompatActivity {
                                             startActivity(intent);
                                         }
                                     })
-                                    .setNeutralButton("Lúc khác", new DialogInterface.OnClickListener() {
+                                    .setNeutralButton(R.string.later, new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             dialog.cancel();
@@ -450,9 +458,9 @@ public class RestaurantsDishes extends AppCompatActivity {
                         if(dataSqlite.getCount() == 0) //Nếu chưa đăng nhập
                         {
                             AlertDialog.Builder builder = new AlertDialog.Builder(contextActivity);
-                            builder.setTitle("Bạn chưa đăng nhập")
-                                    .setMessage("Đăng nhập hoặc đăng kí ngay nào !!!")
-                                    .setPositiveButton("Đăng kí", new DialogInterface.OnClickListener() {
+                            builder.setTitle(getString(R.string.not_signin))
+                                    .setMessage(getString(R.string.sign_in_or_sign_up))
+                                    .setPositiveButton(getString(R.string.sign_up), new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             Intent intent = new Intent(context, CreatePhoneNumber.class);
@@ -460,7 +468,7 @@ public class RestaurantsDishes extends AppCompatActivity {
                                             startActivity(intent);
                                         }
                                     })
-                                    .setNegativeButton("Đăng nhập", new DialogInterface.OnClickListener() {
+                                    .setNegativeButton(getString(R.string.sign_in), new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             Intent intent = new Intent(context, LoginPhoneNumber.class);
@@ -468,7 +476,7 @@ public class RestaurantsDishes extends AppCompatActivity {
                                             startActivity(intent);
                                         }
                                     })
-                                    .setNeutralButton("Lúc khác", new DialogInterface.OnClickListener() {
+                                    .setNeutralButton(getString(R.string.later), new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             dialog.cancel();
@@ -624,9 +632,6 @@ public class RestaurantsDishes extends AppCompatActivity {
                 //Phần xử lí result khi lấy được
                 Log.d("OrderID", String.valueOf(orderDetails.getOrderId()));
                 Log.d("DishID", String.valueOf(orderDetails.getOrderId()));
-//                Intent intent = getIntent();
-//                ArrayList<String> Test = new ArrayList<>();
-//                intent.putExtra("A", Test);
             }
             @Override
             public void onFailure(Call<OrderDetailsCreateData> call, Throwable t) {
@@ -652,7 +657,6 @@ public class RestaurantsDishes extends AppCompatActivity {
                 listItem.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT));
                 listItem.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
                 totalHeight += listItem.getMeasuredHeight();
-
             }
         }
 
@@ -687,13 +691,8 @@ public class RestaurantsDishes extends AppCompatActivity {
                         "FROM CustomerAccount"); //Đây là câu lệnh SQL chuẩn
         return getData;
     }
-    //Thêm Fragment
-//    private void addFragmentGetDish()
-//    {
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        FragmentGetDish fragmentGetDish = new FragmentGetDish();
-//        fragmentTransaction.add(R.id.fragmentGetDish, fragmentGetDish);
-//        fragmentTransaction.commit();
-//    }
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
+    }
 }

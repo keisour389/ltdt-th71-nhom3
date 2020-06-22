@@ -4,40 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login.Login.CreatePhoneNumber">
+    tools:context=".Login.Activity.CreatePhoneNumber">
     <View
         android:background="@color/colorOrange"
         android:layout_width="match_parent"
-        android:layout_height="2dp"></View>
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="AppOrder xin chào!"
-        android:textColor="@color/colorOrange"
-        android:textSize="30sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:inputType="phone"
-        android:text="Số điện thoại của bạn là gì?"
-        android:textColor="@color/colorOrange"
-        android:textSize="30sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.29"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:layout_height="2dp">
+    </View>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -48,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="AppOrder xin chào!"
+            android:text="@string/hello"
             android:textColor="@color/colorOrange"
             android:textSize="30sp"
             android:textStyle="bold|italic"
@@ -63,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="68dp"
             android:inputType="phone"
-            android:text="Số điện thoại của bạn là gì?"
+            android:text="@string/enter_phone_number"
             android:textColor="@color/colorOrange"
             android:textSize="30sp"
             android:textStyle="italic"
@@ -81,7 +53,7 @@
             android:ems="10"
             android:enabled="true"
             android:fadeScrollbars="false"
-            android:hint="Nhập số điện thoại"
+            android:hint="@string/enter_phone_number"
             android:inputType="phone"
             android:textColor="@color/colorOrange"
             android:textSize="24sp"
@@ -96,7 +68,7 @@
             android:layout_height="51dp"
             android:layout_marginTop="281dp"
             android:background="@color/colorOrange"
-            android:text="Tiếp Theo"
+            android:text="@string/next_phone_number"
             android:textColor="@android:color/white"
             android:textSize="24sp"
             android:textStyle="normal"

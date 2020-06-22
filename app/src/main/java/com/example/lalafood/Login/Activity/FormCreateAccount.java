@@ -21,6 +21,7 @@ import com.example.lalafood.API.OrdersFoodAPI;
 import com.example.lalafood.API.Req.CreateUserData;
 import com.example.lalafood.API.Req.Users;
 import com.example.lalafood.Common.Account;
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
@@ -114,7 +115,7 @@ public class FormCreateAccount extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (txtEHo.getText().toString().isEmpty()) {
-                    txtEHo.setError("VUI LÒNG KHÔNG ĐỂ TRỐNG !");
+                    txtEHo.setError(getText(R.string.no_empty_password));
                 }
             }
         });
@@ -123,7 +124,7 @@ public class FormCreateAccount extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (txtETen.getText().toString().isEmpty()) {
-                    txtETen.setError("VUI LÒNG KHÔNG ĐỂ TRỐNG !");
+                    txtETen.setError(getText(R.string.no_empty_password));
                 }
             }
         });
@@ -133,7 +134,7 @@ public class FormCreateAccount extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (txtEDiaChi.getText().toString().isEmpty()) {
-                    txtEDiaChi.setError("VUI LÒNG KHÔNG ĐỂ TRỐNG !");
+                    txtEDiaChi.setError(getText(R.string.no_empty_password));
                 }
             }
         });
@@ -143,14 +144,14 @@ public class FormCreateAccount extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (edTEmail.getText().toString().isEmpty()) {
-                    edTEmail.setError("VUI LÒNG KHÔNG ĐỂ TRỐNG !");
+                    edTEmail.setError(getText(R.string.no_empty_password));
                 }
             }
         });
         //Nút quay lại
         actionBar.setDisplayHomeAsUpEnabled(true);
         //Set title
-        actionBar.setTitle("Tạo tài khoản");
+        actionBar.setTitle(getText(R.string.create_account));
 
     }
 
@@ -220,7 +221,7 @@ public class FormCreateAccount extends AppCompatActivity {
                 }
                 //Tìm thấy
                 Log.d("Response", "Success");
-                Toast.makeText(context, "Chúc mừng bạn tạo tài khoản thành công.", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, R.string.create_success, Toast.LENGTH_LONG).show();
                 Intent TV = new Intent(context, MainLogin.class);
                 startActivity(TV);
             }
@@ -228,7 +229,7 @@ public class FormCreateAccount extends AppCompatActivity {
             //-Mail trùng
             @Override
             public void onFailure(Call<CreateUserData> call, Throwable t) {
-                Toast.makeText(context, "Đã xảy ra lội bất thường.", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, R.string.unexpected_error, Toast.LENGTH_LONG).show();
                 Log.d("Response", "Error");
             }
         });
@@ -263,7 +264,7 @@ public class FormCreateAccount extends AppCompatActivity {
         users.setEmail(edTEmail.getText().toString());
         //Các thông tin hệ thống tạo
         users.setTypeUserId(accountType);
-        users.setStatus("Bình thường"); //Tạm thời chưa để hơn 10 kí tự
+        users.setStatus(getString(R.string.normal)); //Tạm thời chưa để hơn 10 kí tự
         users.setCreatedDate(today);
     }
     @Override
@@ -276,5 +277,10 @@ public class FormCreateAccount extends AppCompatActivity {
             this.finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+    //Đổi ngôn ngữ
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

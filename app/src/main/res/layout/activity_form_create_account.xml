@@ -5,16 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".Login.Login.FormCreateAccount">
-
-
+    tools:context=".Login.Activity.FormCreateAccount">
     <Button
         android:id="@+id/btnDangKy"
         android:layout_width="401dp"
         android:layout_height="51dp"
         android:layout_marginTop="528dp"
         android:background="@color/colorOrange"
-        android:text="Đăng ký"
+        android:text="@string/sign_up"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="normal"
@@ -28,7 +26,7 @@
         android:layout_width="400dp"
         android:layout_height="71dp"
         android:layout_marginTop="80dp"
-        android:hint="Họ người đăng ký"
+        android:hint="@string/last_name_registration"
         app:counterEnabled="true"
         app:counterMaxLength="20"
         app:errorEnabled="true"
@@ -53,7 +51,7 @@
         android:layout_width="400dp"
         android:layout_height="71dp"
         android:layout_marginTop="148dp"
-        android:hint="Tên người đăng ký"
+        android:hint="@string/first_name_registration"
         app:counterEnabled="true"
         app:counterMaxLength="20"
         app:errorEnabled="true"
@@ -80,7 +78,7 @@
         android:layout_width="400dp"
         android:layout_height="71dp"
         android:layout_marginTop="384dp"
-        android:hint="Địa chỉ người đăng ký"
+        android:hint="@string/address_registration"
         app:counterEnabled="true"
         app:counterMaxLength="50"
         app:errorEnabled="true"
@@ -109,7 +107,7 @@
         android:layout_marginTop="456dp"
         android:ems="10"
         android:enabled="true"
-        android:hint="Email người đăng ký"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:textColor="@color/colorOrange"
         app:layout_constraintTop_toTopOf="parent"
@@ -121,7 +119,7 @@
         android:layout_width="389dp"
         android:layout_height="33dp"
         android:layout_marginTop="48dp"
-        android:text="Mời người đăng ký nhập đầy đủ thông tin đăng ký!"
+        android:text="@string/enter_full_registration_info"
         android:textColor="@color/colorOrange"
         android:textSize="18sp"
         android:textStyle="italic"
@@ -135,7 +133,7 @@
         android:layout_width="392dp"
         android:layout_height="41dp"
         android:layout_marginTop="4dp"
-        android:text="Thông tin đăng ký"
+        android:text="@string/registration_info"
         android:textColor="@color/colorOrange"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -149,7 +147,7 @@
         android:layout_height="43dp"
         android:layout_marginTop="236dp"
         android:background="@color/colorOrange"
-        android:text="Chọn Ngày Sinh"
+        android:text="@string/date_of_birth"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -169,7 +167,7 @@
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=" Chọn giới tính:"
+            android:text="@string/gender"
             android:textColor="@color/colorOrange"
             android:textSize="18sp" />
 
@@ -177,7 +175,7 @@
             android:id="@+id/radioButtonNam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nam"
+            android:text="@string/gender_male"
             android:textColor="@color/colorOrange"
             android:textSize="18sp" />
 
@@ -185,7 +183,7 @@
             android:id="@+id/radioButtonNu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nữ"
+            android:text="@string/gender_female"
             android:textColor="@color/colorOrange"
             android:textSize="18sp" />
     </RadioGroup>

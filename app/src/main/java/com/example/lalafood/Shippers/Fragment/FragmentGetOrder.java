@@ -80,7 +80,7 @@ public class FragmentGetOrder extends Fragment {
         phonePickUp = (TextView) view.findViewById(R.id.phonePickUp);
         phoneShip = (TextView) view.findViewById(R.id.phoneShip);
         buttonGet = (Button) view.findViewById(R.id.buttonGet);
-        //
+
         //set Scroll View
         orderScrollView = (ScrollView) view.findViewById(R.id.orderScrollView);
         //
@@ -108,10 +108,6 @@ public class FragmentGetOrder extends Fragment {
         //Get account
         databaseContext = new DatabaseContext(getActivity(), "Local", null, 1);
         account = getAccountFromDatabase();
-
-        //Toast.makeText(getContext(), orderSearchResult.getStatus(), Toast.LENGTH_SHORT).show();
-        //
-
 
         return view;
     }
@@ -178,8 +174,6 @@ public class FragmentGetOrder extends Fragment {
                 togglePhoneNumber(0, View.INVISIBLE);
                 break;
         }
-
-
     }
     //Thay đổi chữ và màu sắc button
     private void changeStatusButtonAndLabel(String buttonText, String buttonColor, String labelText, String labelColor)
@@ -292,11 +286,9 @@ public class FragmentGetOrder extends Fragment {
         Cursor getData = databaseContext.GetData
                 ("SELECT *\n" +
                         "FROM ShipperAccount");
-        Log.d("GetCount", String.valueOf(getData.isFirst()));
         while(getData.moveToNext()) //The first row
         {
             result = getData.getString(0);//Account nằm cột 1
-            Log.d("AccountDatabase", result);
         }
         return result;
     }

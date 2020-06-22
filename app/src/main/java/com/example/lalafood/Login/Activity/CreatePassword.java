@@ -11,8 +11,11 @@ import android.widget.Button;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.lalafood.Helper.LocaleHelper;
 import com.example.lalafood.R;
 import com.google.android.material.textfield.TextInputEditText;
+
+import static com.example.lalafood.R.string.no_empty_password;
 
 
 public class CreatePassword extends AppCompatActivity {
@@ -64,7 +67,7 @@ public class CreatePassword extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (txtEMatKhauDangKy.getText().toString().isEmpty()) {
-                    txtEMatKhauDangKy.setError("VUI LÒNG KHÔNG ĐỂ TRỐNG !");
+                    txtEMatKhauDangKy.setError(getText(R.string.no_empty_password));
                 }
             }
         });
@@ -74,14 +77,14 @@ public class CreatePassword extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (txtENhapLaiMatKhauDangKy.getText().toString().isEmpty()) {
-                    txtENhapLaiMatKhauDangKy.setError("VUI LÒNG KHÔNG ĐỂ TRỐNG !");
+                    txtENhapLaiMatKhauDangKy.setError(getText(R.string.no_empty_password));
                 }
             }
         });
         //Nút quay lại
         actionBar.setDisplayHomeAsUpEnabled(true);
         //Set title
-        actionBar.setTitle("Tạo tài khoản");
+        actionBar.setTitle(getText(R.string.create_account));
     }
 
     // Kiểm tra 2 ô dữ liệu có rỗng hay 0.
@@ -111,5 +114,10 @@ public class CreatePassword extends AppCompatActivity {
             this.finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+    //Đổi ngôn ngữ
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

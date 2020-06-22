@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#f7a305"
+    >
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_language"
+        android:gravity="center_horizontal"
+        android:textSize = "25sp"
+        android:textStyle="bold"
+
+        android:textColor="#000000"/>
+    <Button
+        android:id="@+id/lang_eng"
+        android:textSize = "25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#000000"
+        android:text="@string/lang_english"
+        android:textStyle="bold"
+        android:textColor="#f7a305"
+        />
+
+    <Button
+        android:id="@+id/lang_viet"
+        android:textSize = "25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#000000"
+        android:text="@string/lang_viet"
+        android:textStyle="bold"
+        android:textColor="#f7a305"
+        />
+
+
+</LinearLayout>
